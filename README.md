@@ -4,17 +4,17 @@ An independent research publication exploring how procurement is evolving from t
 
 ## Core Thesis
 
-Procurement is increasingly operating in environments defined by greater complexity, larger information flows, cross-functional dependencies, and growing AI integration.
+Procurement environments are becoming increasingly complex. Teams now operate across larger information flows, multiple stakeholders, expanding operational requirements, and growing AI integration.
 
 Traditional procurement roles were largely designed around transaction execution and process management.
 
 This research proposes that procurement is evolving toward a new operating model where competitive advantage increasingly comes from designing systems behind decisions rather than optimizing isolated activities.
 
-The emerging role explored in this publication is:
+This publication introduces an emerging role:
 
 **Procurement Systems Operator (PSO)**
 
-A role focused on orchestrating workflows, intelligence, decision systems, and operational structures across procurement environments.
+A role focused on orchestrating workflows, intelligence, decision systems, and operating structures across procurement environments.
 
 > The transaction gets attention.  
 > The system creates outcomes.
@@ -36,9 +36,9 @@ This publication explores several questions:
 
 ## Original Frameworks Introduced
 
-This publication introduces three original frameworks:
+This publication introduces three original frameworks.
 
-### PSO — Procurement Systems Operator
+### PSO | Procurement Systems Operator
 
 A proposed operating role focused on moving procurement from execution toward system orchestration.
 
@@ -46,7 +46,7 @@ A proposed operating role focused on moving procurement from execution toward sy
 
 A capability model designed to identify future procurement skills and transformation requirements.
 
-### PDOS — Procurement Decision Operating System
+### PDOS | Procurement Decision Operating System
 
 A decision architecture framework designed to connect inputs, intelligence, governance, and outcomes.
 
@@ -61,13 +61,13 @@ A decision architecture framework designed to connect inputs, intelligence, gove
 - 24-month transformation roadmap
 - Economic impact model for capability gaps
 - Future procurement scenarios
-- Executive recommendations
+- Executive recommendations for procurement leaders
 
 ---
 
 ## Research Themes
 
-- Procurement system architecture
+- Procurement systems architecture
 - Strategic sourcing
 - AI-augmented procurement
 - Decision architecture
@@ -77,7 +77,7 @@ A decision architecture framework designed to connect inputs, intelligence, gove
 
 ---
 
-## Author
+## About the Author
 
 **Manivardhan Reddy B**
 
@@ -121,4 +121,4 @@ Please provide attribution when referencing these frameworks.
 
 This publication represents independent research and does not reflect the views of any employer, client, vendor, or organisation.
 
-Industry statistics and external information referenced in the report originate from publicly available research and representative industry sources.
+Industry statistics and external information referenced throughout the report originate from publicly available research and representative industry sources.
