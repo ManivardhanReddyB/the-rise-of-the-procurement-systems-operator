@@ -49,6 +49,20 @@ Planned publications:
 
 ---
 
+## Publication Status
+
+Current Version:
+
+**RP001 v1.0**
+
+Status: Public
+
+Released: July 2026
+
+Updates:
+
+- Initial public release
+
 ## Research Themes
 
 - Procurement systems architecture
