@@ -1,5 +1,13 @@
 # The Rise of the Procurement Systems Operator (RP001)
 
+<p align="center">
+  <img src="assets/rp001-cover.png" alt="The Rise of the Procurement Systems Operator" width="900">
+</p>
+
+<p align="center">
+  <strong>Independent Research Publication | RP001</strong>
+</p>
+
 An independent research publication exploring how procurement is evolving from transaction management toward system orchestration in an AI-enabled operating environment.
 
 ## Core Thesis
