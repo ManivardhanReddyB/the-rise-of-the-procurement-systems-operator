@@ -29,6 +29,18 @@ the-rise-of-the-procurement-systems-operator/
 ├── index.html
 ```
 
+## Research Series
+
+Current publication:
+
+✔ RP001 | The Rise of the Procurement Systems Operator
+
+Planned publications:
+
+□ RP002 | In development
+
+□ RP003 | In development
+
 ## Core Thesis
 
 Procurement environments are becoming increasingly complex. Teams now operate across larger information flows, multiple stakeholders, expanding operational requirements, and growing AI integration.
