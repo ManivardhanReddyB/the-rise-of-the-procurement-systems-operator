@@ -1,0 +1,1840 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Rise of the Procurement Systems Operator</title>
+
+  <meta name="author" content="Manivardhan Reddy Bonthi Reddy Gari">
+  <meta name="description" content="Independent research examining the capability transition shaping the next generation of procurement operating models, including the PSO role, VISTA capability model, and PDOS architecture.">
+  <meta name="keywords" content="Procurement Systems Operator, VISTA Framework, PDOS, Procurement Transformation, Operating Models, Capability Evolution, Supply Chain, Strategic Sourcing">
+
+  <meta name="publication" content="RP001: Independent Procurement Research Series">
+  <meta name="version" content="2026 Edition: July Release">
+  <meta name="publication-date" content="2026-07">
+  <meta name="rights" content="© 2026 Manivardhan Reddy Bonthi Reddy Gari. All rights reserved.">
+
+  <style>
+/* ============================================================
+   DESIGN SYSTEM - Enterprise Systems Architecture
+   Background:#FFFFFF  Primary:#0F0F0F  Accent:#2563EB
+   Secondary:#64748B   Highlight:#0EA5A4
+   No gradients · No shadows · No 3D
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FFFFFF;--primary:#0F0F0F;--accent:#2563EB;
+  --secondary:#64748B;--highlight:#0EA5A4;--rule:#E2E8F0;
+  --faint:#F8FAFC;--warn:#DC2626;
+  --mono:'Courier New',Courier,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --page-max:1080px;
+}
+html{font-size:15px;line-height:1.65;color:var(--primary);background:var(--bg);font-family:var(--sans);}
+body{max-width:var(--page-max);margin:0 auto;padding:0;overflow-x:hidden;}
+
+/* ---- UTILITIES ---- */
+.mono{font-family:var(--mono);}
+.accent{color:var(--accent);}
+.highlight{color:var(--highlight);}
+.secondary{color:var(--secondary);}
+.label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--secondary);}
+.rule{border:none;border-top:1px solid var(--rule);margin:2rem 0;}
+.tag{display:inline-block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:.15rem .5rem;border:1px solid currentColor;}
+.tag-evidence{color:var(--highlight);border-color:var(--highlight);}
+.tag-interp{color:var(--accent);border-color:var(--accent);}
+.tag-framework{color:var(--primary);border-color:var(--primary);}
+.tag-rec{color:var(--warn);border-color:var(--warn);}
+
+/* ---- PAGE SHELL ---- */
+.page{
+  min-height:100vh;padding:4rem 3.5rem;
+  border-bottom:2px solid var(--primary);
+  position:relative;
+}
+.page-num{
+  position:absolute;bottom:1.5rem;right:3.5rem;
+  font-family:var(--mono);font-size:.7rem;color:var(--secondary);
+  letter-spacing:.08em;
+}
+.page-id{
+  position:absolute;top:1.5rem;right:3.5rem;
+  font-family:var(--mono);font-size:.65rem;color:var(--secondary);
+  letter-spacing:.1em;text-transform:uppercase;
+}
+.section-rule{
+  display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem;
+}
+.section-rule .sr-num{
+  font-family:var(--mono);font-size:.75rem;color:var(--accent);
+  letter-spacing:.1em;white-space:nowrap;
+}
+.section-rule .sr-line{flex:1;height:1px;background:var(--primary);}
+.section-rule .sr-tag{
+  font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--secondary);white-space:nowrap;
+}
+
+/* ---- TYPOGRAPHY ---- */
+h1{font-size:2.8rem;font-weight:800;line-height:1.1;letter-spacing:-.02em;}
+h2{font-size:1.9rem;font-weight:700;line-height:1.2;letter-spacing:-.01em;margin-bottom:1rem;}
+h3{font-size:1.25rem;font-weight:700;line-height:1.3;margin-bottom:.6rem;}
+h4{font-size:.95rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.4rem;}
+p{margin-bottom:1rem;font-size:.95rem;}
+ul,ol{margin-left:1.4rem;margin-bottom:1rem;}
+li{font-size:.95rem;margin-bottom:.35rem;}
+strong{font-weight:700;}
+
+/* ---- COVER ---- */
+.cover{
+  min-height:100vh;padding:5rem 3.5rem 4rem;
+  display:flex;flex-direction:column;justify-content:space-between;
+  border-bottom:2px solid var(--primary);
+}
+.cover-top{border-top:4px solid var(--accent);padding-top:2rem;}
+.cover-rp{font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--secondary);margin-bottom:2rem;}
+.cover-title{font-size:3.4rem;font-weight:900;line-height:1.05;letter-spacing:-.03em;max-width:820px;margin-bottom:1.5rem;}
+.cover-subtitle{font-size:1.15rem;color:var(--secondary);max-width:640px;line-height:1.5;margin-bottom:3rem;border-left:3px solid var(--accent);padding-left:1rem;}
+.cover-arch{margin:2rem 0;}
+.cover-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;border-top:1px solid var(--rule);padding-top:2rem;}
+.cover-meta-item .cm-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--secondary);margin-bottom:.3rem;}
+.cover-meta-item .cm-val{font-size:.85rem;font-weight:600;}
+.cover-bottom{font-family:var(--mono);font-size:.65rem;color:var(--secondary);letter-spacing:.08em;}
+
+/* ---- TWO-COLUMN LAYOUT ---- */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start;}
+
+/* ---- STAT BLOCKS ---- */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem;margin:2rem 0;}
+.stat-block{border:1px solid var(--primary);padding:1.25rem 1rem;}
+.stat-block .sb-num{font-family:var(--mono);font-size:2.4rem;font-weight:700;line-height:1;color:var(--accent);margin-bottom:.4rem;}
+.stat-block .sb-num.hl{color:var(--highlight);}
+.stat-block .sb-num.warn{color:var(--warn);}
+.stat-block .sb-label{font-size:.78rem;color:var(--secondary);line-height:1.4;}
+.stat-block .sb-source{font-family:var(--mono);font-size:.6rem;color:var(--secondary);margin-top:.5rem;letter-spacing:.06em;}
+
+/* ---- INSIGHT BOX ---- */
+.insight-box{border-left:4px solid var(--accent);padding:1rem 1.25rem;background:var(--faint);margin:1.5rem 0;}
+.insight-box.hl{border-left-color:var(--highlight);}
+.insight-box.warn{border-left-color:var(--warn);}
+.insight-box .ib-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--secondary);margin-bottom:.4rem;}
+.insight-box p{margin-bottom:0;font-size:.9rem;}
+
+/* ---- TABLES ---- */
+.data-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.85rem;}
+.data-table th{background:var(--primary);color:#fff;text-align:left;padding:.6rem .8rem;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;}
+.data-table td{padding:.55rem .8rem;border-bottom:1px solid var(--rule);vertical-align:top;}
+.data-table tr:nth-child(even) td{background:var(--faint);}
+.data-table td.accent{color:var(--accent);font-weight:700;}
+.data-table td.hl{color:var(--highlight);font-weight:700;}
+.data-table td.warn{color:var(--warn);font-weight:700;}
+
+/* ---- SVG VISUALS ---- */
+.visual-frame{border:1px solid var(--primary);margin:2rem 0;padding:1.5rem;background:var(--bg);}
+.visual-frame .vf-title{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--secondary);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--rule);}
+svg text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;}
+
+/* ---- SVG SCROLL WRAPPER ---- */
+.svg-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.svg-scroll svg{display:block;}
+
+/* ---- EXEC TAKEAWAY ---- */
+.exec-takeaway{border:1px solid var(--accent);padding:1.25rem 1.5rem;margin-top:2.5rem;}
+.exec-takeaway .et-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;}
+.exec-takeaway p{margin-bottom:0;font-size:.9rem;font-weight:600;}
+
+/* ---- FRAMEWORK BLOCKS ---- */
+.framework-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.25rem;margin:2rem 0;}
+.fw-block{border:1px solid var(--primary);padding:1.25rem;}
+.fw-block .fw-letter{font-family:var(--mono);font-size:2rem;font-weight:900;color:var(--accent);line-height:1;margin-bottom:.3rem;}
+.fw-block .fw-name{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;}
+.fw-block .fw-def{font-size:.8rem;color:var(--secondary);line-height:1.5;}
+
+/* ---- ROADMAP ---- */
+.roadmap{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin:2rem 0;border:1px solid var(--primary);}
+.rm-phase{padding:1.25rem 1rem;border-right:1px solid var(--primary);}
+.rm-phase:last-child{border-right:none;}
+.rm-phase .rmp-num{font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem;}
+.rm-phase .rmp-title{font-size:.85rem;font-weight:700;margin-bottom:.6rem;}
+.rm-phase ul{margin-left:1rem;font-size:.75rem;color:var(--secondary);}
+
+/* ---- SCENARIO CARDS ---- */
+.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2rem 0;}
+.sc-card{border:1px solid var(--primary);padding:1.5rem;}
+.sc-card .scc-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--secondary);margin-bottom:.5rem;}
+.sc-card .scc-title{font-size:1rem;font-weight:700;margin-bottom:.75rem;}
+.sc-card .scc-prob{font-family:var(--mono);font-size:.7rem;color:var(--accent);margin-top:.75rem;}
+
+/* ---- ROLE COMPARISON ---- */
+.role-compare{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--primary);margin:2rem 0;}
+.rc-col{border-right:1px solid var(--primary);}
+.rc-col:last-child{border-right:none;}
+.rc-header{background:var(--primary);color:#fff;padding:.75rem .8rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;}
+.rc-header.accent-bg{background:var(--accent);}
+.rc-row{padding:.6rem .8rem;border-bottom:1px solid var(--rule);font-size:.78rem;}
+.rc-row:last-child{border-bottom:none;}
+.rc-row.dim{color:var(--secondary);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:var(--faint);}
+
+/* ---- NAVIGATION BAR ---- */
+#report-nav{
+  position:sticky;top:0;z-index:9999;
+  background:var(--primary);
+  border-bottom:3px solid var(--accent);
+  width:100%;
+  box-sizing:border-box;
+}
+#report-nav-inner{
+  max-width:var(--page-max);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:0;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+#report-nav-inner::-webkit-scrollbar{display:none;}
+#report-nav-inner a{
+  display:block;
+  padding:.55rem .85rem;
+  font-family:var(--mono);
+  font-size:.6rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#94A3B8;
+  text-decoration:none;
+  white-space:nowrap;
+  border-right:1px solid #1E293B;
+  transition:color .15s,background .15s;
+  flex-shrink:0;
+}
+#report-nav-inner a:last-child{border-right:none;}
+#report-nav-inner a:hover,#report-nav-inner a.nav-active{
+  color:#FFFFFF;
+  background:#1E293B;
+}
+#report-nav-inner a.nav-cover{
+  color:var(--accent);
+  font-weight:700;
+  border-right:1px solid #1E293B;
+}
+@media(max-width:720px){
+  #report-nav-inner a{padding:.5rem .65rem;font-size:.55rem;}
+}
+
+/* ---- SCROLL TO TOP ---- */
+#scroll-top-btn{
+  position:fixed;
+  bottom:2rem;right:2rem;
+  width:2.6rem;height:2.6rem;
+  background:var(--primary);
+  border:2px solid var(--accent);
+  color:var(--accent);
+  font-size:1.1rem;
+  line-height:1;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  z-index:9998;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s,background .15s,color .15s;
+  font-family:var(--mono);
+  font-weight:700;
+}
+#scroll-top-btn.visible{opacity:1;pointer-events:auto;}
+#scroll-top-btn:hover{background:var(--accent);color:#fff;}
+@media(max-width:480px){
+  #scroll-top-btn{bottom:1.25rem;right:1.25rem;width:2.2rem;height:2.2rem;font-size:.95rem;}
+}
+
+
+/* ---- TABLE RESPONSIVE WRAPPER ---- */
+.tbl-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.tbl-wrap table{min-width:520px;}
+
+/* ---- PRINT ---- */
+@media print{
+  .page{page-break-after:always;min-height:auto;}
+  .cover{page-break-after:always;}
+  #report-nav,#scroll-top-btn{display:none!important;}
+}
+
+/* ============================================================
+   RESPONSIVE — mobile-first fixes
+   All content, colours, and theme unchanged.
+   Only layout/overflow/spacing adjusted.
+   ============================================================ */
+@media(max-width:720px){
+  /* Reduce page padding so content doesn't overflow */
+  .page{padding:3rem 1.25rem 3rem;}
+  .cover{padding:3rem 1.25rem 2.5rem;}
+  .page-num{right:1.25rem;}
+  .page-id{right:1.25rem;max-width:60%;text-align:right;white-space:normal;word-break:break-word;}
+
+  /* Typography scale-down */
+  h1{font-size:2rem;}
+  h2{font-size:1.45rem;}
+  .cover-title{font-size:2.2rem;}
+  .cover-subtitle{font-size:1rem;}
+
+  /* Grid collapses */
+  .two-col,.three-col{grid-template-columns:1fr;}
+  .cover-meta{grid-template-columns:1fr 1fr;}
+
+  /* Role compare: keep all 4 columns, scroll horizontally */
+  .role-compare-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .role-compare{
+    grid-template-columns:repeat(4,minmax(140px,1fr));
+    min-width:560px;
+    overflow-x:visible;
+  }
+
+  /* Roadmap: single column stack */
+  .roadmap{grid-template-columns:1fr;}
+  .rm-phase{border-right:none;border-bottom:1px solid var(--primary);}
+  .rm-phase:last-child{border-bottom:none;}
+
+  /* Scenario grid: single column */
+  .scenario-grid{grid-template-columns:1fr;}
+
+  /* Stat grid: 2 columns minimum */
+  .stat-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));}
+
+  /* Framework grid: 1 column */
+  .framework-grid{grid-template-columns:1fr;}
+
+  /* SVG: allow horizontal scroll when viewBox is wide */
+  .visual-frame{padding:1rem .75rem;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .visual-frame svg{min-width:320px;}
+
+  /* Cover arch SVG */
+  .cover-arch{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .cover-arch svg{min-width:480px;}
+
+  /* Rec list */
+  .rec-item{flex-direction:column;gap:.5rem;}
+  .rec-num{font-size:1.1rem;}
+
+  /* Tables: allow scroll */
+  .data-table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .data-table{min-width:480px;}
+
+  /* Exec takeaway padding */
+  .exec-takeaway{padding:1rem 1rem;}
+
+  /* Section rule label wrap */
+  .section-rule .sr-tag{white-space:normal;text-align:right;max-width:50%;}
+
+  /* About the Author: stack author bio and footer grids */
+  .page [style*="grid-template-columns:1fr 3fr"]{grid-template-columns:1fr !important;}
+  .page [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr !important;}
+
+  /* Scenario grid: stack to single column */
+  .scenario-grid{grid-template-columns:1fr !important;}
+}
+
+@media(max-width:480px){
+  .page{padding:2.5rem 1rem 2.5rem;}
+  .cover{padding:2.5rem 1rem 2rem;}
+  .page-num{right:1rem;}
+  .page-id{right:1rem;}
+  h2{font-size:1.25rem;}
+  .cover-title{font-size:1.75rem;}
+  .cover-meta{grid-template-columns:1fr;}
+  .stat-grid{grid-template-columns:1fr 1fr;}
+  /* Role compare: full horizontal scroll on very small */
+  .role-compare{
+    grid-template-columns:repeat(4,minmax(130px,1fr));
+    min-width:520px;
+  }
+  .role-compare-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--primary);}
+  .role-compare{border:none;margin:0;}
+}
+
+    /* Scenario blocks */
+    .scenario-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:1rem; }
+    .sc-block { border:1.5px solid #E2E8F0; padding:0; }
+    .sc-header { padding:.6rem .85rem; font-size:.8rem; font-weight:700; background:#F8FAFC; color:#0F0F0F; }
+    .sc-prob { padding:.5rem .85rem; font-size:.75rem; color:#64748B; border-bottom:1px solid #E2E8F0; }
+    .sc-block p { padding:.5rem .85rem; font-size:.78rem; margin:0; }
+    .sc-trigger { padding:.5rem .85rem; font-size:.72rem; color:#64748B; background:#F8FAFC; border-top:1px solid #E2E8F0; font-style:italic; }
+    .warn-bg { background:#FEF2F2 !important; color:#DC2626 !important; }
+    /* Recommendations */
+    .rec-list { display:flex; flex-direction:column; gap:1rem; }
+    .rec-item { display:flex; gap:1rem; align-items:flex-start; border-left:3px solid #2563EB; padding-left:1rem; }
+    .rec-num { font-size:1.4rem; font-weight:800; color:#2563EB; min-width:2rem; line-height:1; }
+    .rec-body { flex:1; }
+    .rec-title { font-size:.9rem; font-weight:700; color:#0F0F0F; margin-bottom:.35rem; }
+    .rec-body p { font-size:.82rem; color:#0F0F0F; margin:0 0 .35rem; }
+    .rec-meta { font-size:.72rem; color:#64748B; }
+
+    @media(max-width:720px){
+      .scenario-grid{grid-template-columns:1fr;}
+    }
+
+  /* Author page responsive */
+  @media(max-width:600px){
+    .author-hero-grid{grid-template-columns:1fr!important;text-align:center;}
+    .author-detail-strip{grid-template-columns:1fr!important;}
+    .author-footer-grid{grid-template-columns:1fr!important;}
+  }
+</style>
+</head>
+<body>
+<!-- ============================================================
+     STICKY NAVIGATION BAR
+     ============================================================ -->
+<nav id="report-nav" aria-label="Report navigation">
+  <div id="report-nav-inner">
+    <a href="#cover" class="nav-cover">RP001</a>
+    <a href="#pg-exec">Exec Summary</a>
+    <a href="#pg-intro">Introduction</a>
+    <a href="#pg-context">Research Context</a>
+    <a href="#pg-evidence">Evidence Review</a>
+    <a href="#pg-discontinuity">Discontinuity</a>
+    <a href="#pg-systems">Systems Analysis</a>
+    <a href="#pg-evolution">Evolution Model</a>
+    <a href="#pg-pso">PSO Framework</a>
+    <a href="#pg-vista">VISTA</a>
+    <a href="#pg-pdos">PDOS</a>
+    <a href="#pg-benchmark">Benchmark</a>
+    <a href="#pg-roadmap">Roadmap</a>
+    <a href="#pg-economic">Economic Model</a>
+    <a href="#pg-scenarios">Scenarios</a>
+    <a href="#pg-recs">Recommendations</a>
+    <a href="#pg-conclusion">Conclusion</a>
+    <a href="#pg-refs">References</a>
+    <a href="#pg-appendix">Appendix</a>
+    <a href="#pg-author">Author</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     COVER PAGE
+     ============================================================ -->
+<div class="cover" id="cover">
+  <div class="cover-top">
+    <div class="cover-rp">Research Project RP001 &nbsp;·&nbsp; Independent Research Synthesis &nbsp;·&nbsp; 2026</div>
+    <div class="cover-title">The Rise of the<br/>Procurement<br/>Systems Operator</div>
+    <div class="cover-subtitle">Why Procurement's Future Depends Less on Buying<br/>and More on Decision Design</div>
+    <!-- ARCHITECTURE DIAGRAM: Cover Blueprint -->
+    <div class="cover-arch">
+      <svg width="100%" viewBox="0 0 900 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Horizontal spine -->
+        <line x1="40" y1="90" x2="860" y2="90" stroke="#0F0F0F" stroke-width="1.5"/>
+        <!-- Node labels -->
+        <g font-family="-apple-system,sans-serif" font-size="10" fill="#64748B" text-anchor="middle">
+          <text x="100" y="140">SUPPLIERS</text>
+          <text x="240" y="140">TECHNOLOGY</text>
+          <text x="380" y="140">DATA</text>
+          <text x="520" y="140">RISK</text>
+          <text x="660" y="140">STAKEHOLDERS</text>
+          <text x="800" y="140">OBJECTIVES</text>
+        </g>
+        <!-- Nodes on spine -->
+        <circle cx="100" cy="90" r="6" fill="#FFFFFF" stroke="#0F0F0F" stroke-width="1.5"/>
+        <circle cx="240" cy="90" r="6" fill="#FFFFFF" stroke="#0F0F0F" stroke-width="1.5"/>
+        <circle cx="380" cy="90" r="6" fill="#FFFFFF" stroke="#0F0F0F" stroke-width="1.5"/>
+        <circle cx="520" cy="90" r="6" fill="#FFFFFF" stroke="#0F0F0F" stroke-width="1.5"/>
+        <circle cx="660" cy="90" r="6" fill="#FFFFFF" stroke="#0F0F0F" stroke-width="1.5"/>
+        <circle cx="800" cy="90" r="6" fill="#FFFFFF" stroke="#0F0F0F" stroke-width="1.5"/>
+        <!-- PSO central node -->
+        <rect x="400" y="28" width="100" height="36" fill="#2563EB"/>
+        <text x="450" y="51" font-family="-apple-system,sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">PSO LAYER</text>
+        <!-- Vertical connectors from PSO down to spine -->
+        <line x1="450" y1="64" x2="450" y2="90" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <!-- Tick marks -->
+        <line x1="100" y1="85" x2="100" y2="95" stroke="#0F0F0F" stroke-width="1.5"/>
+        <line x1="240" y1="85" x2="240" y2="95" stroke="#0F0F0F" stroke-width="1.5"/>
+        <line x1="380" y1="85" x2="380" y2="95" stroke="#0F0F0F" stroke-width="1.5"/>
+        <line x1="520" y1="85" x2="520" y2="95" stroke="#0F0F0F" stroke-width="1.5"/>
+        <line x1="660" y1="85" x2="660" y2="95" stroke="#0F0F0F" stroke-width="1.5"/>
+        <line x1="800" y1="85" x2="800" y2="95" stroke="#0F0F0F" stroke-width="1.5"/>
+        <!-- End caps -->
+        <line x1="40" y1="82" x2="40" y2="98" stroke="#0F0F0F" stroke-width="1.5"/>
+        <line x1="860" y1="82" x2="860" y2="98" stroke="#0F0F0F" stroke-width="1.5"/>
+      </svg>
+    </div>
+  </div>
+  <div>
+    <div class="cover-meta">
+<div class="cover-meta-item">
+  <div class="cm-label">Report</div>
+  <div class="cm-val">RP001 · July 2026 Release</div>
+</div>
+<div class="cover-meta-item">
+  <div class="cm-label">Author</div>
+  <div class="cm-val">Manivardhan Reddy B</div>
+</div>
+
+<div class="cover-meta-item">
+  <div class="cm-label">Series</div>
+  <div class="cm-val">Independent Procurement Research</div>
+</div>
+
+<div class="cover-meta-item">
+  <div class="cm-label">Rights</div>
+  <div class="cm-val">© 2026 All Rights Reserved</div>
+</div>
+    </div>
+    <div class="cover-bottom" style="margin-top:1.5rem;">
+      THIS PUBLICATION IS AN INDEPENDENT RESEARCH SYNTHESIS. IT DOES NOT REPRESENT THE VIEWS OF ANY NAMED ORGANISATION.
+      ALL STATISTICS DRAWN FROM PUBLICLY AVAILABLE INDUSTRY SOURCES. FRAMEWORKS ARE ORIGINAL INTELLECTUAL CONTRIBUTIONS.
+    </div>
+  </div>
+</div>
+<!-- ============================================================
+     PAGE 02 — EXECUTIVE SUMMARY
+     ============================================================ -->
+<div class="page" id="pg-exec">
+  <div class="page-id">RP001 · EXECUTIVE SUMMARY</div>
+  <div class="section-rule"><span class="sr-num">00</span><div class="sr-line"></div><span class="sr-tag">Executive Summary</span></div>
+  <h2>Procurement Is Experiencing: A Structural Capability Discontinuity</h2>
+  <div class="two-col">
+    <div>
+      <p>Across industries, procurement leaders are confronting a talent readiness crisis that conventional training programmes and incremental skill development cannot resolve. This report synthesises publicly available evidence from Gartner, Deloitte, McKinsey, the Hackett Group, CIPS, and ISM to argue that procurement is not experiencing a skills gap. It is experiencing a <strong>systems transition</strong>.</p>
+      <p>The transition is from a function defined by transaction optimisation toward a function defined by <strong>system optimisation</strong>: the orchestration of interconnected networks of suppliers, technology, data, risk signals, stakeholder relationships, and strategic decisions.</p>
+      <p>Industry evidence confirms the scale of the challenge. <strong>69%</strong> of procurement leaders report that business acumen is increasing in importance. <strong>68%</strong> report that technology and data skills are increasing in importance. Yet only <strong>26%</strong> report that traditional procurement skills are increasing in importance. Most critically, confidence in current talent readiness stands at only <strong>46%</strong>, while confidence in future talent readiness collapses to <strong>14%</strong> This creates a 32-percentage-point structural deficit that no training calendar can close.</p>
+      <p>This report introduces the <strong>Procurement Systems Operator (PSO)</strong> as the emerging professional archetype that procurement functions must develop to remain strategically relevant. The PSO does not replace procurement expertise; it extends it into the domain of systems thinking, decision architecture, and cross-functional orchestration.</p>
+    </div>
+    <div>
+      <div class="stat-grid" style="grid-template-columns:1fr 1fr;">
+        <div class="stat-block"><div class="sb-num">69%</div><div class="sb-label">Report business acumen increasing in importance</div><div class="sb-source">EVIDENCE · Industry Synthesis</div></div>
+        <div class="stat-block"><div class="sb-num">68%</div><div class="sb-label">Report technology &amp; data skills increasing in importance</div><div class="sb-source">EVIDENCE · Industry Synthesis</div></div>
+        <div class="stat-block"><div class="sb-num warn">26%</div><div class="sb-label">Report traditional procurement skills increasing in importance</div><div class="sb-source">EVIDENCE · Industry Synthesis</div></div>
+        <div class="stat-block"><div class="sb-num warn">14%</div><div class="sb-label">Confident in future talent readiness</div><div class="sb-source">EVIDENCE · Industry Synthesis</div></div>
+      </div>
+      <div class="insight-box">
+        <div class="ib-label">Core Thesis</div>
+        <p>Procurement's value creation mechanism is shifting from price discovery and contract execution to decision design and system orchestration. The organisations that recognise this transition earliest will define the next generation of procurement leadership.</p>
+      </div>
+    </div>
+  </div>
+  <hr class="rule"/>
+  <h4>Five Core Findings</h4>
+  <div class="data-table-wrap">
+  <div class="tbl-wrap"><table class="data-table">
+    <thead><tr><th>#</th><th>Finding</th><th>Classification</th><th>Implication</th></tr></thead>
+    <tbody>
+      <tr><td class="accent">01</td><td>The competency model governing most procurement functions is misaligned with emerging operating requirements</td><td><span class="tag tag-evidence">Evidence</span></td><td>Talent development investment is being directed at diminishing-return skills</td></tr>
+      <tr><td class="accent">02</td><td>The 32-point future readiness gap cannot be closed by training alone; it requires organisational redesign</td><td><span class="tag tag-interp">Interpretation</span></td><td>CPOs must reframe talent strategy as system architecture, not curriculum management</td></tr>
+      <tr><td class="accent">03</td><td>Procurement operates as an interconnected system; managing it as a transaction pipeline creates structural value loss</td><td><span class="tag tag-framework">Framework</span></td><td>Operating model redesign is a prerequisite for capability advancement</td></tr>
+      <tr><td class="accent">04</td><td>The VISTA Framework defines five non-negotiable capability domains for the next-generation procurement professional</td><td><span class="tag tag-framework">Framework</span></td><td>Provides a diagnostic and development architecture for CPOs and CHROs</td></tr>
+      <tr><td class="accent">05</td><td>Organisations that do not invest in PSO capability development within 24 months risk functional commoditisation</td><td><span class="tag tag-rec">Recommendation</span></td><td>The window for first-mover advantage in procurement capability is closing</td></tr>
+    </tbody>
+  </table></div>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>The question is not whether procurement will change. The evidence confirms it already has. The question is whether procurement leaders will design the transition or be defined by it.</p>
+  </div>
+  <div class="page-num">02</div>
+</div>
+<!-- ============================================================
+     PAGE 03 — INTRODUCTION
+     ============================================================ -->
+<div class="page" id="pg-intro">
+  <div class="page-id">RP001 · INTRODUCTION</div>
+  <div class="section-rule"><span class="sr-num">01</span><div class="sr-line"></div><span class="sr-tag">Introduction</span></div>
+  <h2>The Function That Redefined Itself And Then Stopped</h2>
+  <div class="two-col">
+    <div>
+      <p>Procurement has undergone two significant transformations in the past four decades. The first was the shift from purchasing administration to strategic sourcing, a transition driven by total cost of ownership thinking, supplier relationship management, and the recognition that procurement could contribute to margin, not merely manage spend. The second was the elevation of category management as an organising principle: a structured approach to supply market intelligence, demand aggregation, and value creation beyond price.</p>
+      <p>Both transformations were necessary. Both were incomplete. And critically, both were defined by the same underlying logic: <em>procurement as a function that optimises the acquisition of goods and services</em>.</p>
+      <p>That logic is now insufficient.</p>
+      <p>The operating environment that procurement now inhabits is not defined by acquisition complexity. It is defined by <strong>system complexity</strong>: the simultaneous management of supply chain disruption, geopolitical risk, digital transformation, sustainability mandates, stakeholder expectation inflation, and the accelerating integration of AI-driven decision tools into the procurement workflow.</p>
+      <p>In this environment, the most valuable procurement professional is not the most experienced buyer. It is the professional who can <strong>design, orchestrate, and optimise the systems</strong> through which procurement decisions are made, executed, and continuously improved.</p>
+      <p>This is the Procurement Systems Operator.</p>
+    </div>
+    <div>
+      <!-- VISUAL: Procurement Evolution Timeline -->
+      <div class="visual-frame">
+        <div class="vf-title">Visual 01: Procurement Evolution Timeline</div>
+        <svg width="100%" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Vertical axis -->
+          <line x1="60" y1="20" x2="60" y2="280" stroke="#0F0F0F" stroke-width="1.5"/>
+          <!-- Axis label -->
+          <text x="15" y="150" font-family="-apple-system,sans-serif" font-size="9" fill="#64748B" transform="rotate(-90,15,150)" text-anchor="middle">STRATEGIC VALUE</text>
+          <!-- Horizontal axis -->
+          <line x1="60" y1="280" x2="390" y2="280" stroke="#0F0F0F" stroke-width="1.5"/>
+          <!-- Era labels -->
+          <text x="100" y="298" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">1980s–90s</text>
+          <text x="185" y="298" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">2000s–10s</text>
+          <text x="270" y="298" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">2015–2022</text>
+          <text x="355" y="298" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">2023+</text>
+          <!-- Step line -->
+          <polyline points="70,240 140,240 140,190 225,190 225,130 310,130 310,60 390,60" stroke="#2563EB" stroke-width="2" fill="none"/>
+          <!-- Step nodes -->
+          <circle cx="105" cy="240" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+          <circle cx="182" cy="190" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+          <circle cx="267" cy="130" r="5" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+          <circle cx="350" cy="60" r="5" fill="#0EA5A4" stroke="#0EA5A4" stroke-width="1.5"/>
+          <!-- Labels -->
+          <text x="105" y="258" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">PURCHASING</text>
+          <text x="182" y="208" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">STRATEGIC</text>
+          <text x="182" y="218" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">SOURCING</text>
+          <text x="267" y="148" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">CATEGORY</text>
+          <text x="267" y="158" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">MANAGEMENT</text>
+          <text x="350" y="78" font-family="-apple-system,sans-serif" font-size="8" fill="#0EA5A4" text-anchor="middle" font-weight="700">SYSTEMS</text>
+          <text x="350" y="88" font-family="-apple-system,sans-serif" font-size="8" fill="#0EA5A4" text-anchor="middle" font-weight="700">OPERATOR</text>
+        </svg>
+      </div>
+      <div class="insight-box hl">
+        <div class="ib-label">Interpretation</div>
+        <p>Each prior transformation expanded procurement's scope while preserving its core logic. The current transition requires a change in logic, shifting from acquisition optimisation to system orchestration.</p>
+      </div>
+    </div>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>Procurement's identity crisis is not a confidence problem. It is a definition problem. The function's current self-definition as a buyer of goods and services is too narrow for the operating environment it now inhabits.</p>
+  </div>
+  <div class="page-num">03</div>
+</div>
+<!-- PAGE 04 — RESEARCH CONTEXT & METHODOLOGY -->
+<div class="page" id="pg-context">
+  <div class="page-id">RP001 · RESEARCH CONTEXT &amp; METHODOLOGY</div>
+  <div class="section-rule"><span class="sr-num">02</span><div class="sr-line"></div><span class="sr-tag">Research Context &amp; Methodology</span></div>
+  <h2>Positioning This Research: What It Is and What It Is Not</h2>
+  <div class="two-col">
+    <div>
+      <div class="insight-box warn">
+        <div class="ib-label">Methodological Transparency</div>
+        <p>This publication is an <strong>Independent Research Synthesis</strong>. No primary surveys, proprietary interviews, or commissioned datasets were conducted for this report. All quantitative evidence is drawn from publicly available industry research. Frameworks presented are original intellectual contributions developed through synthesis and analysis of existing evidence.</p>
+      </div>
+      <h3 style="margin-top:1.5rem;">Research Approach</h3>
+      <p>This report applies four distinct analytical lenses to the procurement capability question:</p>
+      <ol>
+        <li><strong>Evidence Synthesis:</strong> Aggregation and cross-referencing of publicly available procurement research from Gartner, Deloitte, McKinsey, Hackett Group, CIPS, ISM, Kearney, BCG, and Accenture.</li>
+        <li><strong>Systems Thinking Analysis:</strong> Application of systems thinking methodology to model procurement as an interconnected operating system rather than a linear transaction pipeline.</li>
+        <li><strong>Capability Discontinuity Mapping:</strong> Identification of structural gaps between current procurement competency models and emerging operating requirements.</li>
+        <li><strong>Framework Development:</strong> Construction of original frameworks, including the PSO Model, VISTA Framework, and Procurement Decision Operating System, to provide actionable architecture for transformation.</li>
+      </ol>
+      <h3>Evidence Classification</h3>
+      <p>Throughout this report, all content is classified using the following taxonomy to ensure analytical transparency:</p>
+    </div>
+    <div>
+      <div class="data-table-wrap">
+      <div class="tbl-wrap"><table class="data-table">
+        <thead><tr><th>Classification</th><th>Definition</th><th>Marker</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Observed Evidence</strong></td><td>Quantitative or qualitative findings from cited industry research</td><td><span class="tag tag-evidence">Evidence</span></td></tr>
+          <tr><td><strong>Interpretation</strong></td><td>The authors' analytical reading of evidence patterns</td><td><span class="tag tag-interp">Interpretation</span></td></tr>
+          <tr><td><strong>Original Framework</strong></td><td>Structural models developed specifically for this publication</td><td><span class="tag tag-framework">Framework</span></td></tr>
+          <tr><td><strong>Recommendation</strong></td><td>Prescriptive guidance derived from evidence and frameworks</td><td><span class="tag tag-rec">Recommendation</span></td></tr>
+        </tbody>
+      </table></div>
+      </div>
+      <h3 style="margin-top:1.5rem;">Source Landscape</h3>
+      <div class="data-table-wrap">
+      <div class="tbl-wrap"><table class="data-table">
+        <thead><tr><th>Source Category</th><th>Contribution</th></tr></thead>
+        <tbody>
+          <tr><td>Gartner</td><td>Procurement technology adoption, talent readiness benchmarks</td></tr>
+          <tr><td>Deloitte CPO Survey</td><td>Priority shifts, capability gaps, digital transformation pace</td></tr>
+          <tr><td>McKinsey Global Institute</td><td>Automation impact, future of work in procurement</td></tr>
+          <tr><td>Hackett Group</td><td>Procurement performance benchmarks, operating model data</td></tr>
+          <tr><td>CIPS / ISM</td><td>Professional competency frameworks, workforce surveys</td></tr>
+          <tr><td>World Economic Forum</td><td>Future skills requirements, supply chain resilience</td></tr>
+          <tr><td>Kearney / BCG / Accenture</td><td>Transformation case evidence, operating model design</td></tr>
+        </tbody>
+      </table></div>
+      </div>
+      <div class="insight-box">
+        <div class="ib-label">Scope Boundary</div>
+        <p>Where exact citations are unavailable, this report indicates "Representative industry sources for validation." No statistics have been fabricated or extrapolated beyond the cited evidence base.</p>
+      </div>
+    </div>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>The frameworks in this report are designed to be immediately actionable. They are derived from evidence but go beyond it, offering CPOs a structural language for a transformation that the evidence confirms is necessary but does not yet fully prescribe.</p>
+  </div>
+  <div class="page-num">04</div>
+</div>
+<!-- PAGE 05 — EVIDENCE REVIEW -->
+<div class="page" id="pg-evidence">
+  <div class="page-id">RP001 · EVIDENCE REVIEW</div>
+  <div class="section-rule"><span class="sr-num">03</span><div class="sr-line"></div><span class="sr-tag">Evidence Review</span></div>
+  <h2>What the Data Reveals: A Function Under Structural Pressure</h2>
+  <p>The following evidence base forms the empirical foundation of this report. Each data point is drawn from industry research and is presented without interpretive inflation. Analytical commentary is clearly separated.</p>
+  <div class="stat-grid">
+    <div class="stat-block"><div class="sb-num">69%</div><div class="sb-label">of procurement leaders report business acumen is increasing in importance</div><div class="sb-source">EVIDENCE · Industry Synthesis · Representative sources: Deloitte, Gartner</div></div>
+    <div class="stat-block"><div class="sb-num">68%</div><div class="sb-label">report technology and data skills are increasing in importance</div><div class="sb-source">EVIDENCE · Industry Synthesis · Representative sources: Gartner, ISM</div></div>
+    <div class="stat-block"><div class="sb-num warn">26%</div><div class="sb-label">report traditional procurement skills are increasing in importance</div><div class="sb-source">EVIDENCE · Industry Synthesis · Representative sources: CIPS, Hackett Group</div></div>
+    <div class="stat-block"><div class="sb-num">46%</div><div class="sb-label">current talent readiness confidence</div><div class="sb-source">EVIDENCE · Industry Synthesis · Representative sources: Deloitte CPO Survey</div></div>
+    <div class="stat-block"><div class="sb-num warn">14%</div><div class="sb-label">future talent readiness confidence</div><div class="sb-source">EVIDENCE · Industry Synthesis · Representative sources: Deloitte CPO Survey</div></div>
+    <div class="stat-block"><div class="sb-num hl">74%</div><div class="sb-label">cite alternative sourcing as a priority</div><div class="sb-source">EVIDENCE · Industry Synthesis · Representative sources: Kearney, BCG</div></div>
+    <div class="stat-block"><div class="sb-num hl">64%</div><div class="sb-label">cite supply chain visibility as a priority</div><div class="sb-source">EVIDENCE · Industry Synthesis · Representative sources: Gartner, WEF</div></div>
+    <div class="stat-block"><div class="sb-num hl">61%</div><div class="sb-label">cite supplier collaboration as a priority</div><div class="sb-source">EVIDENCE · Industry Synthesis · Representative sources: McKinsey, Accenture</div></div>
+  </div>
+  <hr class="rule"/>
+  <h3>Constraint Evidence</h3>
+  <div class="stat-grid">
+    <div class="stat-block"><div class="sb-num warn">57%</div><div class="sb-label">report siloed operations as a constraint</div><div class="sb-source">EVIDENCE · Industry Synthesis</div></div>
+    <div class="stat-block"><div class="sb-num warn">46%</div><div class="sb-label">report competing priorities as a constraint</div><div class="sb-source">EVIDENCE · Industry Synthesis</div></div>
+    <div class="stat-block"><div class="sb-num warn">40%</div><div class="sb-label">report capability limitations as a constraint</div><div class="sb-source">EVIDENCE · Industry Synthesis</div></div>
+    <div class="stat-block"><div class="sb-num warn">34%</div><div class="sb-label">report talent gaps as a constraint</div><div class="sb-source">EVIDENCE · Industry Synthesis</div></div>
+  </div>
+  <div class="visual-frame">
+    <div class="vf-title">Visual 02: Capability Importance vs. Readiness Gap</div>
+    <svg width="100%" viewBox="0 0 700 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="120" y1="20" x2="120" y2="160" stroke="#0F0F0F" stroke-width="1"/>
+      <line x1="120" y1="160" x2="680" y2="160" stroke="#0F0F0F" stroke-width="1"/>
+      <rect x="140" y="55" width="80" height="105" fill="#2563EB" opacity="0.15" stroke="#2563EB" stroke-width="1"/>
+      <rect x="140" y="55" width="80" height="105" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+      <text x="180" y="50" font-family="-apple-system,sans-serif" font-size="9" fill="#2563EB" text-anchor="middle" font-weight="700">69%</text>
+      <text x="180" y="175" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Business</text>
+      <text x="180" y="185" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Acumen</text>
+      <rect x="250" y="57" width="80" height="103" fill="#2563EB" opacity="0.15" stroke="#2563EB" stroke-width="1"/>
+      <rect x="250" y="57" width="80" height="103" fill="none" stroke="#2563EB" stroke-width="1.5"/>
+      <text x="290" y="52" font-family="-apple-system,sans-serif" font-size="9" fill="#2563EB" text-anchor="middle" font-weight="700">68%</text>
+      <text x="290" y="175" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Tech &amp;</text>
+      <text x="290" y="185" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Data Skills</text>
+      <rect x="360" y="121" width="80" height="39" fill="#64748B" opacity="0.15" stroke="#64748B" stroke-width="1"/>
+      <rect x="360" y="121" width="80" height="39" fill="none" stroke="#64748B" stroke-width="1.5"/>
+      <text x="400" y="116" font-family="-apple-system,sans-serif" font-size="9" fill="#64748B" text-anchor="middle" font-weight="700">26%</text>
+      <text x="400" y="175" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Traditional</text>
+      <text x="400" y="185" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Procurement</text>
+      <rect x="470" y="91" width="80" height="69" fill="#0EA5A4" opacity="0.15" stroke="#0EA5A4" stroke-width="1"/>
+      <rect x="470" y="91" width="80" height="69" fill="none" stroke="#0EA5A4" stroke-width="1.5"/>
+      <text x="510" y="86" font-family="-apple-system,sans-serif" font-size="9" fill="#0EA5A4" text-anchor="middle" font-weight="700">46%</text>
+      <text x="510" y="175" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Current</text>
+      <text x="510" y="185" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Readiness</text>
+      <rect x="580" y="139" width="80" height="21" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="1"/>
+      <rect x="580" y="139" width="80" height="21" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+      <text x="620" y="134" font-family="-apple-system,sans-serif" font-size="9" fill="#DC2626" text-anchor="middle" font-weight="700">14%</text>
+      <text x="620" y="175" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Future</text>
+      <text x="620" y="185" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Readiness</text>
+      <text x="115" y="163" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="end">0%</text>
+      <text x="115" y="110" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="end">50%</text>
+      <text x="115" y="57" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="end">100%</text>
+    </svg>
+  </div>
+  <div class="insight-box warn">
+    <div class="ib-label">Interpretation: The Readiness Collapse</div>
+    <p>The 32-point drop from current readiness (46%) to future readiness (14%) is not a marginal concern. It represents a structural confidence failure, meaning procurement leaders do not believe their current talent development approach will produce the professionals their function requires. This is the defining evidence of a systems-level problem.</p>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>The evidence does not describe a training gap. It describes a definition gap: procurement's current competency architecture is built for a function that is being superseded by a more complex operating requirement.</p>
+  </div>
+  <div class="page-num">05</div>
+</div>
+<!-- PAGE 06 — CAPABILITY DISCONTINUITY ANALYSIS -->
+<div class="page" id="pg-discontinuity">
+  <div class="page-id">RP001 · CAPABILITY DISCONTINUITY</div>
+  <div class="section-rule"><span class="sr-num">04</span><div class="sr-line"></div><span class="sr-tag">Capability Discontinuity Analysis</span></div>
+  <h2>Why Traditional Procurement Skills Are No Longer Sufficient</h2>
+  <div class="two-col">
+    <div>
+      <p>Traditional procurement competency models were designed for an operating environment characterised by relative stability: defined supply markets, predictable demand patterns, manageable supplier bases, and linear decision processes. In that environment, expertise in negotiation, contract law, sourcing methodology, and spend analysis was genuinely differentiating.</p>
+      <p>That environment no longer exists at scale.</p>
+      <p>The current operating environment is characterised by <strong>non-linear complexity</strong>: AI-augmented sourcing tools that automate price discovery, supply chain disruptions that require real-time risk modelling, ESG mandates that require supplier ecosystem transformation, and digital integration requirements that demand technology fluency as a baseline competency.</p>
+      <p>In this environment, traditional skills do not disappear; they become <strong>table stakes</strong>. The differentiating capability is no longer the ability to execute a sourcing process. It is the ability to design the system within which sourcing decisions are made.</p>
+      <h3 style="margin-top:1.5rem;">Five Root Causes of the Capability Gap</h3>
+      <ol>
+        <li><strong>Competency Model Obsolescence:</strong> Procurement competency frameworks were last structurally revised before the AI and digital transformation era. They measure skills for a function that no longer fully exists.</li>
+        <li><strong>Technology Displacement:</strong> Automation has absorbed the majority of transactional procurement activity. The human value-add has shifted upward, but talent development has not followed.</li>
+        <li><strong>Mandate Scope Expansion:</strong> Procurement is now accountable for sustainability, supplier diversity, digital integration, and business partnership, none of which are addressed in traditional competency models.</li>
+        <li><strong>Organisational Structural Inertia:</strong> 57% of procurement functions report siloed operations. Structural isolation prevents procurement from developing the cross-functional intelligence that systems operation requires.</li>
+        <li><strong>Leadership Capability Lag:</strong> CPOs who rose through traditional procurement pathways may lack the systems thinking vocabulary required to redesign their function's capability architecture.</li>
+      </ol>
+    </div>
+    <div>
+      <div class="visual-frame">
+        <div class="vf-title">Visual 03: Capability Discontinuity Map</div>
+        <svg width="100%" viewBox="0 0 390 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="12" y="195" font-family="-apple-system,sans-serif" font-size="9" fill="#64748B" transform="rotate(-90,12,195)" text-anchor="middle">STRATEGIC REQUIREMENT</text>
+          <text x="210" y="360" font-family="-apple-system,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">CURRENT CAPABILITY</text>
+          <line x1="40" y1="30" x2="40" y2="340" stroke="#0F0F0F" stroke-width="1.5"/>
+          <line x1="40" y1="340" x2="370" y2="340" stroke="#0F0F0F" stroke-width="1.5"/>
+          <line x1="40" y1="340" x2="370" y2="30" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="4,3"/>
+          <rect x="40" y="30" width="165" height="155" fill="#DC2626" opacity="0.04" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+          <text x="122" y="115" font-family="-apple-system,sans-serif" font-size="8" fill="#DC2626" text-anchor="middle">CRITICAL GAP</text>
+          <text x="122" y="126" font-family="-apple-system,sans-serif" font-size="8" fill="#DC2626" text-anchor="middle">ZONE</text>
+          <circle cx="300" cy="290" r="7" fill="none" stroke="#64748B" stroke-width="1.5"/>
+          <text x="300" y="308" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">Negotiation</text>
+          <circle cx="260" cy="280" r="7" fill="none" stroke="#64748B" stroke-width="1.5"/>
+          <text x="260" y="298" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">Contracting</text>
+          <circle cx="320" cy="270" r="7" fill="none" stroke="#64748B" stroke-width="1.5"/>
+          <text x="320" y="262" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">Sourcing</text>
+          <circle cx="80" cy="70" r="7" fill="#2563EB" opacity="0.7"/>
+          <text x="80" y="62" font-family="-apple-system,sans-serif" font-size="7" fill="#2563EB" text-anchor="middle">Systems</text>
+          <text x="80" y="52" font-family="-apple-system,sans-serif" font-size="7" fill="#2563EB" text-anchor="middle">Thinking</text>
+          <circle cx="130" cy="90" r="7" fill="#2563EB" opacity="0.7"/>
+          <text x="130" y="82" font-family="-apple-system,sans-serif" font-size="7" fill="#2563EB" text-anchor="middle">AI Fluency</text>
+          <circle cx="100" cy="130" r="7" fill="#2563EB" opacity="0.7"/>
+          <text x="100" y="150" font-family="-apple-system,sans-serif" font-size="7" fill="#2563EB" text-anchor="middle">Decision Arch.</text>
+          <circle cx="160" cy="110" r="7" fill="#0EA5A4" opacity="0.9"/>
+          <text x="160" y="102" font-family="-apple-system,sans-serif" font-size="7" fill="#0EA5A4" text-anchor="middle">Data Synthesis</text>
+          <circle cx="55" cy="370" r="5" fill="#64748B" opacity="0.5"/>
+          <text x="65" y="374" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B">Established skills (high capability, declining requirement)</text>
+          <circle cx="55" cy="384" r="5" fill="#2563EB" opacity="0.7"/>
+          <text x="65" y="387" font-family="-apple-system,sans-serif" font-size="7" fill="#2563EB">Emerging skills (high requirement, low capability)</text>
+        </svg>
+      </div>
+      <div class="insight-box">
+        <div class="ib-label">Interpretation</div>
+        <p>The discontinuity is not a gap within an existing capability model. It is a gap between two different capability models, one optimised for transaction management, one required for system operation.</p>
+      </div>
+    </div>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>Traditional procurement skills are not becoming irrelevant; they are becoming insufficient. The ceiling of their strategic value has been reached. Future value creation requires a different capability architecture entirely.</p>
+  </div>
+  <div class="page-num">06</div>
+</div>
+<!-- PAGE 07 — SYSTEMS ANALYSIS -->
+<div class="page" id="pg-systems">
+  <div class="page-id">RP001 · SYSTEMS ANALYSIS</div>
+  <div class="section-rule"><span class="sr-num">05</span><div class="sr-line"></div><span class="sr-tag">Systems Analysis</span></div>
+  <h2>Procurement as an Interconnected Operating System</h2>
+  <p>Procurement does not operate in isolation. It sits at the intersection of six interdependent subsystems, each generating signals, constraints, and value opportunities that the function must simultaneously process. Managing procurement as a linear transaction pipeline ignores these interdependencies and systematically destroys value.</p>
+  <div class="visual-frame">
+    <div class="vf-title">Visual 04: Procurement System Architecture Map</div>
+    <svg width="100%" viewBox="0 0 700 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="280" y="175" width="140" height="60" fill="#2563EB"/>
+      <text x="350" y="200" font-family="-apple-system,sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">PROCUREMENT</text>
+      <text x="350" y="216" font-family="-apple-system,sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">SYSTEMS OPERATOR</text>
+      <rect x="30" y="60" width="120" height="50" fill="#FFFFFF" stroke="#0F0F0F" stroke-width="1.5"/>
+      <text x="90" y="82" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0F0F0F" text-anchor="middle">SUPPLIER</text>
+      <text x="90" y="96" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0F0F0F" text-anchor="middle">ECOSYSTEM</text>
+      <line x1="150" y1="85" x2="280" y2="190" stroke="#0F0F0F" stroke-width="1" stroke-dasharray="4,2"/>
+      <rect x="30" y="175" width="120" height="50" fill="#FFFFFF" stroke="#0F0F0F" stroke-width="1.5"/>
+      <text x="90" y="197" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0F0F0F" text-anchor="middle">TECHNOLOGY</text>
+      <text x="90" y="211" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0F0F0F" text-anchor="middle">LAYER</text>
+      <line x1="150" y1="200" x2="280" y2="205" stroke="#0F0F0F" stroke-width="1"/>
+      <rect x="30" y="295" width="120" height="50" fill="#FFFFFF" stroke="#0F0F0F" stroke-width="1.5"/>
+      <text x="90" y="317" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0F0F0F" text-anchor="middle">DATA &amp;</text>
+      <text x="90" y="331" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0F0F0F" text-anchor="middle">INTELLIGENCE</text>
+      <line x1="150" y1="320" x2="280" y2="220" stroke="#0F0F0F" stroke-width="1" stroke-dasharray="4,2"/>
+      <rect x="550" y="60" width="120" height="50" fill="#FFFFFF" stroke="#DC2626" stroke-width="1.5"/>
+      <text x="610" y="82" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#DC2626" text-anchor="middle">RISK</text>
+      <text x="610" y="96" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#DC2626" text-anchor="middle">ARCHITECTURE</text>
+      <line x1="550" y1="85" x2="420" y2="190" stroke="#DC2626" stroke-width="1" stroke-dasharray="4,2"/>
+      <rect x="550" y="175" width="120" height="50" fill="#FFFFFF" stroke="#0F0F0F" stroke-width="1.5"/>
+      <text x="610" y="197" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0F0F0F" text-anchor="middle">STAKEHOLDER</text>
+      <text x="610" y="211" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0F0F0F" text-anchor="middle">NETWORK</text>
+      <line x1="550" y1="200" x2="420" y2="205" stroke="#0F0F0F" stroke-width="1"/>
+      <rect x="550" y="295" width="120" height="50" fill="#FFFFFF" stroke="#0EA5A4" stroke-width="1.5"/>
+      <text x="610" y="317" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0EA5A4" text-anchor="middle">BUSINESS</text>
+      <text x="610" y="331" font-family="-apple-system,sans-serif" font-size="10" font-weight="700" fill="#0EA5A4" text-anchor="middle">OBJECTIVES</text>
+      <line x1="550" y1="320" x2="420" y2="220" stroke="#0EA5A4" stroke-width="1" stroke-dasharray="4,2"/>
+      <text x="350" y="380" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">&#8592; Bidirectional signal flows · All subsystems interdependent · PSO orchestrates &#8594;</text>
+    </svg>
+  </div>
+  <div class="three-col" style="margin-top:1.5rem;">
+    <div>
+      <h4>Supplier Ecosystem</h4>
+      <p style="font-size:.82rem;">Not a vendor list, but a dynamic network of capability, risk, innovation, and dependency. PSOs model supplier relationships as portfolio positions, not transactional counterparties.</p>
+    </div>
+    <div>
+      <h4>Technology Layer</h4>
+      <p style="font-size:.82rem;">The procurement technology stack, including P2P platforms, spend analytics, contract lifecycle management, AI sourcing tools, is both an enabler and a constraint. PSOs configure and govern the technology layer.</p>
+    </div>
+    <div>
+      <h4>Data &amp; Intelligence</h4>
+      <p style="font-size:.82rem;">Spend data, market intelligence, supplier performance data, risk signals, and demand forecasts form a continuous information environment. PSOs synthesise signals into decisions.</p>
+    </div>
+    <div>
+      <h4>Risk Architecture</h4>
+      <p style="font-size:.82rem;">Supply chain risk is no longer episodic; it is structural. PSOs design risk monitoring systems and embed risk logic into sourcing decisions rather than managing risk reactively.</p>
+    </div>
+    <div>
+      <h4>Stakeholder Network</h4>
+      <p style="font-size:.82rem;">Procurement serves finance, operations, legal, sustainability, and business unit leaders simultaneously. PSOs design stakeholder engagement architectures that align competing priorities.</p>
+    </div>
+    <div>
+      <h4>Business Objectives</h4>
+      <p style="font-size:.82rem;">Procurement's mandate is increasingly defined by enterprise objectives: margin, resilience, growth, sustainability. PSOs translate strategic intent into procurement system design.</p>
+    </div>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>A procurement professional who optimises one subsystem in isolation, however expertly, is generating local efficiency at the cost of system performance. The PSO manages the interactions between subsystems, not the subsystems themselves.</p>
+  </div>
+  <div class="page-num">07</div>
+</div>
+<!-- PAGE 08 — PROCUREMENT EVOLUTION MODEL -->
+<div class="page" id="pg-evolution">
+  <div class="page-id">RP001 · PROCUREMENT EVOLUTION MODEL</div>
+  <div class="section-rule"><span class="sr-num">06</span><div class="sr-line"></div><span class="sr-tag">Procurement Evolution Model</span></div>
+  <h2>Four Stages of Procurement Capability Evolution</h2>
+  <p>Procurement capability does not evolve linearly. It evolves through discontinuous phase transitions, each requiring a fundamentally different operating logic, not merely an extension of the previous stage. The following model describes four stages, their defining characteristics, and the transition conditions that separate them.</p>
+  <div class="visual-frame">
+    <div class="vf-title">Visual 05: Procurement Capability Evolution Model</div>
+    <svg width="100%" viewBox="0 0 800 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="40" width="170" height="160" fill="#FFFFFF" stroke="#64748B" stroke-width="1.5"/>
+      <rect x="210" y="40" width="170" height="160" fill="#FFFFFF" stroke="#64748B" stroke-width="1.5"/>
+      <rect x="400" y="40" width="170" height="160" fill="#FFFFFF" stroke="#64748B" stroke-width="1.5"/>
+      <rect x="590" y="40" width="170" height="160" fill="#FFFFFF" stroke="#2563EB" stroke-width="2"/>
+      <rect x="20" y="40" width="170" height="28" fill="#64748B"/>
+      <rect x="210" y="40" width="170" height="28" fill="#64748B"/>
+      <rect x="400" y="40" width="170" height="28" fill="#64748B"/>
+      <rect x="590" y="40" width="170" height="28" fill="#2563EB"/>
+      <text x="105" y="59" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">STAGE 01 · TRANSACTIONAL</text>
+      <text x="295" y="59" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">STAGE 02 · STRATEGIC</text>
+      <text x="485" y="59" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">STAGE 03 · CATEGORY</text>
+      <text x="675" y="59" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">STAGE 04 · SYSTEMS</text>
+      <text x="105" y="85" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">Purchase orders</text>
+      <text x="105" y="98" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">Invoice processing</text>
+      <text x="105" y="111" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">Vendor management</text>
+      <text x="105" y="124" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">Price negotiation</text>
+      <text x="105" y="145" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle" font-style="italic">Value logic: cost</text>
+      <text x="105" y="158" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle" font-style="italic">reduction</text>
+      <text x="295" y="85" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">TCO analysis</text>
+      <text x="295" y="98" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">Supplier segmentation</text>
+      <text x="295" y="111" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">SRM frameworks</text>
+      <text x="295" y="124" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">RFx process design</text>
+      <text x="295" y="145" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle" font-style="italic">Value logic: total</text>
+      <text x="295" y="158" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle" font-style="italic">value optimisation</text>
+      <text x="485" y="85" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">Market intelligence</text>
+      <text x="485" y="98" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">Demand aggregation</text>
+      <text x="485" y="111" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">Category strategy</text>
+      <text x="485" y="124" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">Stakeholder alignment</text>
+      <text x="485" y="145" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle" font-style="italic">Value logic: category</text>
+      <text x="485" y="158" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle" font-style="italic">value creation</text>
+      <text x="675" y="85" font-family="-apple-system,sans-serif" font-size="8" fill="#2563EB" text-anchor="middle">System design</text>
+      <text x="675" y="98" font-family="-apple-system,sans-serif" font-size="8" fill="#2563EB" text-anchor="middle">Decision architecture</text>
+      <text x="675" y="111" font-family="-apple-system,sans-serif" font-size="8" fill="#2563EB" text-anchor="middle">AI orchestration</text>
+      <text x="675" y="124" font-family="-apple-system,sans-serif" font-size="8" fill="#2563EB" text-anchor="middle">Risk system design</text>
+      <text x="675" y="145" font-family="-apple-system,sans-serif" font-size="8" fill="#2563EB" text-anchor="middle" font-style="italic">Value logic: system</text>
+      <text x="675" y="158" font-family="-apple-system,sans-serif" font-size="8" fill="#2563EB" text-anchor="middle" font-style="italic">optimisation</text>
+      <line x1="190" y1="120" x2="210" y2="120" stroke="#0F0F0F" stroke-width="1.5" marker-end="url(#arr)"/>
+      <line x1="380" y1="120" x2="400" y2="120" stroke="#0F0F0F" stroke-width="1.5" marker-end="url(#arr)"/>
+      <line x1="570" y1="120" x2="590" y2="120" stroke="#2563EB" stroke-width="2" marker-end="url(#arr2)"/>
+      <text x="200" y="112" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">TCO</text>
+      <text x="390" y="112" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">Category</text>
+      <text x="580" y="112" font-family="-apple-system,sans-serif" font-size="7" fill="#2563EB" text-anchor="middle">Systems</text>
+      <defs>
+        <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="#0F0F0F"/>
+        </marker>
+        <marker id="arr2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="#2563EB"/>
+        </marker>
+      </defs>
+      <text x="400" y="245" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Each stage transition requires a change in operating logic, not merely skill extension. Stage 04 is the current frontier.</text>
+    </svg>
+  </div>
+  <div class="data-table-wrap">
+  <div class="tbl-wrap"><table class="data-table" style="margin-top:1.5rem;">
+    <thead><tr><th>Stage</th><th>Primary Value Driver</th><th>Key Skills</th><th>Technology Role</th><th>Limitation</th></tr></thead>
+    <tbody>
+      <tr><td>01 Transactional</td><td>Cost reduction via price</td><td>Negotiation, compliance</td><td>ERP transaction processing</td><td>No market intelligence</td></tr>
+      <tr><td>02 Strategic Sourcing</td><td>Total cost optimisation</td><td>TCO, SRM, RFx design</td><td>Sourcing platforms</td><td>Category-blind</td></tr>
+      <tr><td>03 Category Management</td><td>Category value creation</td><td>Market intelligence, strategy</td><td>Spend analytics, BI</td><td>Siloed by category</td></tr>
+      <tr><td class="accent">04 Systems Operation</td><td class="accent">System-level optimisation</td><td class="accent">Decision design, AI orchestration, risk architecture</td><td class="accent">AI-native, integrated platforms</td><td class="accent">Requires new capability model</td></tr>
+    </tbody>
+  </table></div>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>Most procurement functions are operating at Stage 02 or 03 while their organisations require Stage 04 capability. Closing this gap requires a phase transition in operating logic, not incremental skill development within the existing model.</p>
+  </div>
+  <div class="page-num">08</div>
+</div>
+<!-- PAGE 09 — PSO FRAMEWORK -->
+<div class="page" id="pg-pso">
+  <div class="page-id">RP001 · PSO FRAMEWORK</div>
+  <div class="section-rule"><span class="sr-num">07</span><div class="sr-line"></div><span class="sr-tag">Procurement Systems Operator Framework</span></div>
+  <h2>The Procurement Systems Operator: Defining the Emerging Archetype</h2>
+  <div class="two-col">
+    <div>
+      <div class="insight-box">
+        <div class="ib-label">Framework Definition</div>
+        <p>The <strong>Procurement Systems Operator (PSO)</strong> is a professional archetype defined by the ability to design, orchestrate, and optimise the interconnected systems through which procurement value is created. The PSO does not replace procurement expertise; it extends it into the domain of systems thinking, decision architecture, and cross-functional orchestration.</p>
+      </div>
+      <h3 style="margin-top:1.5rem;">What Distinguishes the PSO</h3>
+      <p>The PSO is not a renamed Category Manager or a rebranded Business Partner. The distinction is architectural. A Category Manager optimises within a defined category boundary. A Business Partner translates business requirements into procurement actions. The PSO <strong>designs the system</strong> within which both operate.</p>
+      <p>Three defining characteristics separate the PSO from prior archetypes:</p>
+      <ol>
+        <li><strong>System Scope:</strong> The PSO's unit of analysis is the procurement system, not the category, the supplier, or the contract. Value is measured at system output, not process compliance.</li>
+        <li><strong>Decision Architecture:</strong> The PSO designs the decision processes, information flows, and governance structures that determine how procurement choices are made, not just what choices are made.</li>
+        <li><strong>Adaptive Intelligence:</strong> The PSO continuously reconfigures the procurement system in response to changing signals, including market shifts, risk events, technology changes, and strategic pivots, without requiring structural redesign each time.</li>
+      </ol>
+      <h3 style="margin-top:1.5rem;">The PSO Capability Stack</h3>
+      <div class="data-table-wrap">
+      <div class="tbl-wrap"><table class="data-table">
+        <thead><tr><th>Layer</th><th>Capability Domain</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td class="accent">L1</td><td>Procurement Foundations</td><td>Sourcing, contracting, SRM are baseline requirements, not differentiators</td></tr>
+          <tr><td class="accent">L2</td><td>Business Intelligence</td><td>Financial acumen, stakeholder management, strategic alignment</td></tr>
+          <tr><td class="accent">L3</td><td>Technology Fluency</td><td>AI tools, data platforms, procurement technology stack management</td></tr>
+          <tr><td class="accent">L4</td><td>Systems Thinking</td><td>Complexity modelling, interdependency mapping, feedback loop analysis</td></tr>
+          <tr><td class="accent">L5</td><td>Decision Architecture</td><td>Decision process design, governance frameworks, judgment calibration</td></tr>
+        </tbody>
+      </table></div>
+      </div>
+    </div>
+    <div>
+      <div class="visual-frame">
+        <div class="vf-title">Visual 06: PSO Capability Architecture</div>
+        <svg width="100%" viewBox="0 0 380 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="180,20 240,80 120,80" fill="#2563EB" opacity="0.9"/>
+          <text x="180" y="58" font-family="-apple-system,sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">L5: DECISION</text>
+          <text x="180" y="70" font-family="-apple-system,sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">ARCHITECTURE</text>
+          <polygon points="120,80 240,80 265,130 95,130" fill="#2563EB" opacity="0.7"/>
+          <text x="180" y="110" font-family="-apple-system,sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">L4: SYSTEMS THINKING</text>
+          <polygon points="95,130 265,130 290,185 70,185" fill="#0EA5A4" opacity="0.8"/>
+          <text x="180" y="163" font-family="-apple-system,sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">L3: TECHNOLOGY FLUENCY</text>
+          <polygon points="70,185 290,185 315,245 45,245" fill="#64748B" opacity="0.6"/>
+          <text x="180" y="220" font-family="-apple-system,sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">L2: BUSINESS INTELLIGENCE</text>
+          <polygon points="45,245 315,245 340,310 20,310" fill="#0F0F0F" opacity="0.8"/>
+          <text x="180" y="283" font-family="-apple-system,sans-serif" font-size="8" font-weight="700" fill="#FFFFFF" text-anchor="middle">L1: PROCUREMENT FOUNDATIONS</text>
+          <text x="325" y="58" font-family="-apple-system,sans-serif" font-size="7" fill="#2563EB" text-anchor="start">DIFFERENTIATING</text>
+          <text x="325" y="110" font-family="-apple-system,sans-serif" font-size="7" fill="#2563EB" text-anchor="start">DIFFERENTIATING</text>
+          <text x="325" y="163" font-family="-apple-system,sans-serif" font-size="7" fill="#0EA5A4" text-anchor="start">ENABLING</text>
+          <text x="325" y="220" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="start">ENABLING</text>
+          <text x="330" y="283" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="start">BASELINE</text>
+          <text x="180" y="340" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Traditional procurement training develops L1&#8211;L2 only.</text>
+          <text x="180" y="354" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">PSO development requires L3&#8211;L5.</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>The PSO is not a job title. It is a capability architecture. Organisations that develop L3&#8211;L5 capabilities across their procurement leadership will systematically outperform those that continue investing exclusively in L1&#8211;L2.</p>
+  </div>
+  <div class="page-num">09</div>
+</div>
+<!-- PAGE 10 — VISTA FRAMEWORK -->
+<div class="page" id="pg-vista">
+  <div class="page-id">RP001 · VISTA FRAMEWORK</div>
+  <div class="section-rule"><span class="sr-num">08</span><div class="sr-line"></div><span class="sr-tag">VISTA Framework</span></div>
+  <h2>VISTA: The Five Capability Domains of the Procurement Systems Operator</h2>
+  <div class="insight-box">
+    <div class="ib-label">Framework</div>
+    <p>The <strong>VISTA Framework</strong> is an original capability architecture developed for this publication. It defines five non-negotiable, interdependent capability domains that characterise the Procurement Systems Operator. VISTA is not a competency list; it is a systems model. Each domain generates outputs that become inputs to the others.</p>
+  </div>
+  <div class="framework-grid" style="margin-top:2rem;">
+    <div class="fw-block">
+      <div class="fw-letter">V</div>
+      <div class="fw-name">Value Architecture</div>
+      <div class="fw-def">The ability to design and communicate how procurement activities translate into enterprise value. Moves beyond cost savings to encompass resilience value, innovation value, relationship capital, and option value. The PSO defines value at system level, not transaction level.</div>
+    </div>
+    <div class="fw-block">
+      <div class="fw-letter" style="color:var(--highlight);">I</div>
+      <div class="fw-name">Intelligence Synthesis</div>
+      <div class="fw-def">The ability to integrate and interpret multiple data streams, including market intelligence, supplier performance data, spend analytics, risk signals, and demand forecasts, into coherent decision inputs. Includes AI tool fluency and the judgment to know when data is insufficient.</div>
+    </div>
+    <div class="fw-block">
+      <div class="fw-letter">S</div>
+      <div class="fw-name">Systems Navigation</div>
+      <div class="fw-def">The ability to operate effectively across the full procurement system: technology platforms, organisational structures, stakeholder networks, and regulatory environments. Includes the capacity to identify and manage system interdependencies and feedback loops.</div>
+    </div>
+    <div class="fw-block">
+      <div class="fw-letter" style="color:var(--highlight);">T</div>
+      <div class="fw-name">Trust Engineering</div>
+      <div class="fw-def">The ability to design and maintain the relational architecture that enables procurement to function as a trusted enterprise partner. Encompasses supplier relationship governance, internal stakeholder credibility, and the ethical frameworks that underpin sustainable procurement decisions.</div>
+    </div>
+    <div class="fw-block">
+      <div class="fw-letter">A</div>
+      <div class="fw-name">Adaptive Judgment</div>
+      <div class="fw-def">The ability to make high-quality decisions under uncertainty, in novel situations, and at pace. Includes the metacognitive capacity to recognise the limits of existing frameworks and design new decision approaches when the situation requires it.</div>
+    </div>
+  </div>
+  <div class="visual-frame">
+    <div class="vf-title">Visual 07: VISTA Interdependency Map</div>
+    <svg width="100%" viewBox="0 0 700 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="295" y="90" width="110" height="50" fill="#2563EB"/>
+      <text x="350" y="111" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">PROCUREMENT</text>
+      <text x="350" y="125" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">SYSTEM OUTPUT</text>
+      <rect x="30" y="15" width="110" height="40" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+      <text x="85" y="32" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#2563EB" text-anchor="middle">V · VALUE</text>
+      <text x="85" y="46" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">ARCHITECTURE</text>
+      <line x1="140" y1="35" x2="295" y2="105" stroke="#2563EB" stroke-width="1" stroke-dasharray="3,2"/>
+      <rect x="30" y="95" width="110" height="40" fill="#FFFFFF" stroke="#0EA5A4" stroke-width="1.5"/>
+      <text x="85" y="112" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0EA5A4" text-anchor="middle">I · INTELLIGENCE</text>
+      <text x="85" y="126" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">SYNTHESIS</text>
+      <line x1="140" y1="115" x2="295" y2="115" stroke="#0EA5A4" stroke-width="1"/>
+      <rect x="30" y="175" width="110" height="40" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+      <text x="85" y="192" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#2563EB" text-anchor="middle">S · SYSTEMS</text>
+      <text x="85" y="206" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">NAVIGATION</text>
+      <line x1="140" y1="195" x2="295" y2="130" stroke="#2563EB" stroke-width="1" stroke-dasharray="3,2"/>
+      <rect x="560" y="15" width="110" height="40" fill="#FFFFFF" stroke="#0EA5A4" stroke-width="1.5"/>
+      <text x="615" y="32" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0EA5A4" text-anchor="middle">T · TRUST</text>
+      <text x="615" y="46" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">ENGINEERING</text>
+      <line x1="560" y1="35" x2="405" y2="105" stroke="#0EA5A4" stroke-width="1" stroke-dasharray="3,2"/>
+      <rect x="560" y="175" width="110" height="40" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.5"/>
+      <text x="615" y="192" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#2563EB" text-anchor="middle">A · ADAPTIVE</text>
+      <text x="615" y="206" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">JUDGMENT</text>
+      <line x1="560" y1="195" x2="405" y2="130" stroke="#2563EB" stroke-width="1" stroke-dasharray="3,2"/>
+    </svg>
+  </div>
+  <div class="insight-box hl">
+    <div class="ib-label">Framework Note</div>
+    <p>VISTA is not a sequential model. All five domains operate simultaneously and interdependently. Weakness in any single domain constrains the performance of the entire system. An organisation developing only Intelligence Synthesis without Adaptive Judgment will generate data-rich but decision-poor procurement operations.</p>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>VISTA provides CPOs with a diagnostic architecture: assess your current team against all five domains, identify the weakest link, and recognise that the weakest domain limits system performance regardless of strength elsewhere.</p>
+  </div>
+  <div class="page-num">10</div>
+</div>
+<!-- PAGE 11 — PDOS -->
+<div class="page" id="pg-pdos">
+  <div class="page-id">RP001 · PROCUREMENT DECISION OPERATING SYSTEM</div>
+  <div class="section-rule"><span class="sr-num">09</span><div class="sr-line"></div><span class="sr-tag">Procurement Decision Operating System</span></div>
+  <h2>The Procurement Decision Operating System (PDOS)</h2>
+  <p>The Procurement Decision Operating System is the operational architecture through which the PSO converts information, relationships, and technology into procurement decisions. It is not a software platform; it is a governance and process design that determines how decisions are made, by whom, with what information, and at what speed.</p>
+  <div class="visual-frame">
+    <div class="vf-title">Visual 08: Procurement Decision Operating System Architecture</div>
+    <svg width="100%" viewBox="0 0 760 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="10" y="65" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="start" font-weight="700">LAYER 1</text>
+      <text x="10" y="76" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="start">SIGNAL</text>
+      <text x="10" y="135" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="start" font-weight="700">LAYER 2</text>
+      <text x="10" y="146" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="start">SYNTHESIS</text>
+      <text x="10" y="205" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="start" font-weight="700">LAYER 3</text>
+      <text x="10" y="216" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="start">DECISION</text>
+      <text x="10" y="275" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="start" font-weight="700">LAYER 4</text>
+      <text x="10" y="286" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="start">EXECUTION</text>
+      <rect x="70" y="40" width="90" height="50" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="115" y="62" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">MARKET</text>
+      <text x="115" y="74" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">SIGNALS</text>
+      <rect x="175" y="40" width="90" height="50" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="220" y="62" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">SUPPLIER</text>
+      <text x="220" y="74" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">DATA</text>
+      <rect x="280" y="40" width="90" height="50" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="325" y="62" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">RISK</text>
+      <text x="325" y="74" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">SIGNALS</text>
+      <rect x="385" y="40" width="90" height="50" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="430" y="62" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">SPEND</text>
+      <text x="430" y="74" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">ANALYTICS</text>
+      <rect x="490" y="40" width="90" height="50" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="535" y="62" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">STAKEHOLDER</text>
+      <text x="535" y="74" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">INPUTS</text>
+      <rect x="595" y="40" width="90" height="50" fill="#FFFFFF" stroke="#64748B" stroke-width="1"/>
+      <text x="640" y="62" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">STRATEGIC</text>
+      <text x="640" y="74" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">OBJECTIVES</text>
+      <line x1="380" y1="90" x2="380" y2="110" stroke="#64748B" stroke-width="1"/>
+      <rect x="70" y="110" width="615" height="50" fill="#F8FAFC" stroke="#2563EB" stroke-width="1.5"/>
+      <text x="377" y="132" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#2563EB" text-anchor="middle">INTELLIGENCE SYNTHESIS ENGINE</text>
+      <text x="377" y="148" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">AI-augmented data integration · Pattern recognition · Anomaly detection · Scenario modelling</text>
+      <line x1="380" y1="160" x2="380" y2="180" stroke="#2563EB" stroke-width="1.5"/>
+      <rect x="70" y="180" width="615" height="50" fill="#2563EB"/>
+      <text x="377" y="202" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">DECISION ARCHITECTURE LAYER · PSO OPERATES HERE</text>
+      <text x="377" y="218" font-family="-apple-system,sans-serif" font-size="8" fill="#FFFFFF" text-anchor="middle" opacity="0.85">Decision rights · Governance frameworks · Judgment protocols · Escalation paths</text>
+      <line x1="380" y1="230" x2="380" y2="250" stroke="#2563EB" stroke-width="1.5"/>
+      <rect x="70" y="250" width="615" height="50" fill="#F8FAFC" stroke="#0EA5A4" stroke-width="1.5"/>
+      <text x="377" y="272" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#0EA5A4" text-anchor="middle">EXECUTION &amp; FEEDBACK LAYER</text>
+      <text x="377" y="288" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Contract execution · Supplier activation · Performance monitoring · System recalibration</text>
+      <path d="M685,285 Q720,285 720,165 Q720,45 685,45" stroke="#0EA5A4" stroke-width="1" fill="none" stroke-dasharray="3,2"/>
+      <text x="725" y="165" font-family="-apple-system,sans-serif" font-size="7" fill="#0EA5A4" text-anchor="start">FEEDBACK</text>
+      <text x="725" y="175" font-family="-apple-system,sans-serif" font-size="7" fill="#0EA5A4" text-anchor="start">LOOP</text>
+    </svg>
+  </div>
+  <div class="two-col" style="margin-top:1.5rem;">
+    <div>
+      <h4>PDOS Design Principles</h4>
+      <ul>
+        <li><strong>Signal completeness over data volume:</strong> The PDOS is designed to surface the right signals, not all signals. Information overload is as damaging as information scarcity.</li>
+        <li><strong>Decision rights clarity:</strong> Every decision in the PDOS has a defined owner, defined inputs, and a defined escalation path. Ambiguity in decision rights is the single most common source of procurement dysfunction.</li>
+        <li><strong>Feedback loop integrity:</strong> The PDOS continuously recalibrates based on execution outcomes. A PDOS without feedback loops is an open system; it cannot learn or improve.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>What the PDOS Replaces</h4>
+      <ul>
+        <li>Ad hoc stakeholder requests that bypass procurement logic</li>
+        <li>Category strategies that are updated annually rather than continuously</li>
+        <li>Risk management that is reactive rather than designed</li>
+        <li>Technology platforms that generate data but do not drive decisions</li>
+        <li>Governance structures that slow decisions without improving their quality</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>The PDOS is the operational expression of the PSO capability. An organisation can hire systems thinkers, but without a decision operating system for them to operate, the capability has no mechanism for value delivery.</p>
+  </div>
+  <div class="page-num">11</div>
+</div>
+<!-- PAGE 12 — CAPABILITY BENCHMARK -->
+<div class="page" id="pg-benchmark">
+  <div class="page-id">RP001 · CAPABILITY BENCHMARK</div>
+  <div class="section-rule"><span class="sr-num">10</span><div class="sr-line"></div><span class="sr-tag">Capability Benchmark &amp; Role Comparison</span></div>
+  <h2>Four Archetypes: A Comparative Capability Analysis</h2>
+  <p>The following comparison maps four distinct procurement professional archetypes across eight capability dimensions. This is not a hierarchy of seniority. It is a map of operating logic. Each archetype represents a coherent, internally consistent approach to procurement value creation. The PSO is not superior to the Category Manager; it operates at a different level of system abstraction.</p>
+  <div class="role-compare-wrap">
+  <div class="role-compare" style="margin-top:1.5rem;">
+    <div class="rc-col">
+      <div class="rc-header">Dimension</div>
+      <div class="rc-row">Unit of Analysis</div>
+      <div class="rc-row">Primary Value Driver</div>
+      <div class="rc-row">Technology Role</div>
+      <div class="rc-row">Risk Approach</div>
+      <div class="rc-row">Stakeholder Model</div>
+      <div class="rc-row">Decision Logic</div>
+      <div class="rc-row">Performance Metric</div>
+      <div class="rc-row">Limitation</div>
+    </div>
+    <div class="rc-col">
+      <div class="rc-header">Traditional Buyer</div>
+      <div class="rc-row">Transaction</div>
+      <div class="rc-row">Price reduction</div>
+      <div class="rc-row">ERP user</div>
+      <div class="rc-row">Reactive / compliance</div>
+      <div class="rc-row">Order taker</div>
+      <div class="rc-row">Rules-based</div>
+      <div class="rc-row">Cost savings</div>
+      <div class="rc-row">No market intelligence</div>
+    </div>
+    <div class="rc-col">
+      <div class="rc-header">Strategic Sourcing</div>
+      <div class="rc-row">Sourcing event</div>
+      <div class="rc-row">TCO optimisation</div>
+      <div class="rc-row">Sourcing platform user</div>
+      <div class="rc-row">Structured assessment</div>
+      <div class="rc-row">Requirements translator</div>
+      <div class="rc-row">Process-based</div>
+      <div class="rc-row">Savings vs. benchmark</div>
+      <div class="rc-row">Event-driven, not continuous</div>
+    </div>
+    <div class="rc-col">
+      <div class="rc-header">Category Manager</div>
+      <div class="rc-row">Category</div>
+      <div class="rc-row">Category value creation</div>
+      <div class="rc-row">Analytics consumer</div>
+      <div class="rc-row">Category risk mapping</div>
+      <div class="rc-row">Business partner</div>
+      <div class="rc-row">Strategy-based</div>
+      <div class="rc-row">Category value delivered</div>
+      <div class="rc-row">Siloed by category boundary</div>
+    </div>
+    <div class="rc-col">
+      <div class="rc-header accent-bg">PSO</div>
+      <div class="rc-row accent">Procurement system</div>
+      <div class="rc-row accent">System-level optimisation</div>
+      <div class="rc-row accent">Technology architect</div>
+      <div class="rc-row accent">Risk system design</div>
+      <div class="rc-row accent">System designer</div>
+      <div class="rc-row accent">Judgment-based</div>
+      <div class="rc-row accent">System performance</div>
+      <div class="rc-row accent">Requires new capability model</div>
+    </div>
+  </div><!-- /.role-compare -->
+  </div><!-- /.role-compare-wrap -->
+  <div class="visual-frame" style="margin-top:2rem;">
+    <div class="vf-title">Visual 09: Capability Radar: Four Archetypes</div>
+    <svg width="100%" viewBox="0 0 700 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="30" y="20" width="12" height="3" fill="#64748B"/>
+      <text x="48" y="27" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B">Traditional Buyer</text>
+      <rect x="160" y="20" width="12" height="3" fill="#64748B" opacity="0.5"/>
+      <text x="178" y="27" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B">Strategic Sourcing</text>
+      <rect x="300" y="20" width="12" height="3" fill="#0EA5A4"/>
+      <text x="318" y="27" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B">Category Manager</text>
+      <rect x="430" y="20" width="12" height="3" fill="#2563EB"/>
+      <text x="448" y="27" font-family="-apple-system,sans-serif" font-size="8" fill="#2563EB" font-weight="700">PSO</text>
+      <text x="60" y="55" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Negotiation</text>
+      <text x="160" y="55" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Sourcing</text>
+      <text x="260" y="55" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Analytics</text>
+      <text x="360" y="55" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Systems</text>
+      <text x="460" y="55" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Decision Arch.</text>
+      <text x="570" y="55" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Tech Fluency</text>
+      <text x="660" y="55" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Bus. Acumen</text>
+      <rect x="30" y="160" width="14" height="80" fill="#64748B"/>
+      <rect x="130" y="140" width="14" height="100" fill="#64748B"/>
+      <rect x="230" y="200" width="14" height="60" fill="#64748B"/>
+      <rect x="330" y="230" width="14" height="30" fill="#64748B"/>
+      <rect x="430" y="240" width="14" height="20" fill="#64748B"/>
+      <rect x="530" y="230" width="14" height="30" fill="#64748B"/>
+      <rect x="620" y="220" width="14" height="40" fill="#64748B"/>
+      <rect x="48" y="120" width="14" height="120" fill="#0EA5A4" opacity="0.6"/>
+      <rect x="148" y="110" width="14" height="130" fill="#0EA5A4" opacity="0.6"/>
+      <rect x="248" y="100" width="14" height="140" fill="#0EA5A4" opacity="0.6"/>
+      <rect x="348" y="180" width="14" height="60" fill="#0EA5A4" opacity="0.6"/>
+      <rect x="448" y="190" width="14" height="50" fill="#0EA5A4" opacity="0.6"/>
+      <rect x="548" y="170" width="14" height="70" fill="#0EA5A4" opacity="0.6"/>
+      <rect x="638" y="120" width="14" height="120" fill="#0EA5A4" opacity="0.6"/>
+      <rect x="66" y="130" width="14" height="110" fill="#2563EB"/>
+      <rect x="166" y="100" width="14" height="140" fill="#2563EB"/>
+      <rect x="266" y="80" width="14" height="160" fill="#2563EB"/>
+      <rect x="366" y="60" width="14" height="180" fill="#2563EB"/>
+      <rect x="466" y="60" width="14" height="180" fill="#2563EB"/>
+      <rect x="566" y="70" width="14" height="170" fill="#2563EB"/>
+      <rect x="656" y="80" width="14" height="160" fill="#2563EB"/>
+      <line x1="20" y1="240" x2="690" y2="240" stroke="#0F0F0F" stroke-width="1"/>
+    </svg>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>The PSO does not make the Category Manager obsolete. It makes the Category Manager more powerful by providing the system architecture within which category strategies can be executed with greater intelligence, speed, and coherence.</p>
+  </div>
+  <div class="page-num">12</div>
+</div>
+<!-- PAGE 13 — TRANSFORMATION ROADMAP -->
+<div class="page" id="pg-roadmap">
+  <div class="page-id">RP001 · TRANSFORMATION ROADMAP</div>
+  <div class="section-rule"><span class="sr-num">11</span><div class="sr-line"></div><span class="sr-tag">Transformation Roadmap</span></div>
+  <h2>From Category Management to Systems Operation: A 24-Month Transformation Architecture</h2>
+  <p>Procurement transformation toward PSO capability is not a training programme. It is an organisational redesign initiative that requires changes to operating model, talent architecture, technology configuration, and governance design. The following roadmap provides a phased approach.</p>
+  <div class="roadmap">
+    <div class="rm-phase">
+      <div class="rmp-num">Phase 01 · Months 01&#8211;03</div>
+      <div class="rmp-title">Diagnostic &amp; Baseline</div>
+      <ul>
+        <li>VISTA capability assessment across procurement leadership</li>
+        <li>Current operating model mapping</li>
+        <li>Technology stack audit</li>
+        <li>Decision rights inventory</li>
+        <li>Stakeholder expectation survey</li>
+        <li>Gap quantification</li>
+      </ul>
+    </div>
+    <div class="rm-phase">
+      <div class="rmp-num">Phase 02 · Months 04&#8211;08</div>
+      <div class="rmp-title">Architecture Design</div>
+      <ul>
+        <li>PDOS design</li>
+        <li>PSO role architecture</li>
+        <li>Technology integration blueprint</li>
+        <li>Data governance framework</li>
+        <li>Stakeholder engagement model</li>
+        <li>Capability development curriculum</li>
+      </ul>
+    </div>
+    <div class="rm-phase">
+      <div class="rmp-num">Phase 03 · Months 09&#8211;14</div>
+      <div class="rmp-title">Pilot &amp; Build</div>
+      <ul>
+        <li>PDOS pilot in 2&#8211;3 categories</li>
+        <li>PSO cohort development</li>
+        <li>AI tool integration</li>
+        <li>Decision architecture testing</li>
+        <li>Feedback loop calibration</li>
+        <li>Metrics baseline establishment</li>
+      </ul>
+    </div>
+    <div class="rm-phase">
+      <div class="rmp-num">Phase 04 · Months 15&#8211;20</div>
+      <div class="rmp-title">Scale &amp; Embed</div>
+      <ul>
+        <li>PDOS full deployment</li>
+        <li>PSO capability rollout</li>
+        <li>Operating model transition</li>
+        <li>Governance model activation</li>
+        <li>Performance measurement</li>
+        <li>Stakeholder communication</li>
+      </ul>
+    </div>
+    <div class="rm-phase">
+      <div class="rmp-num">Phase 05 · Months 21&#8211;24</div>
+      <div class="rmp-title">Optimise &amp; Sustain</div>
+      <ul>
+        <li>System performance review</li>
+        <li>VISTA reassessment</li>
+        <li>Capability gap closure audit</li>
+        <li>Next-generation roadmap</li>
+        <li>External benchmarking</li>
+        <li>Leadership development pipeline</li>
+      </ul>
+    </div>
+  </div>
+  <div class="visual-frame" style="margin-top:2rem;">
+    <div class="vf-title">Visual 10: Transformation Investment vs. Capability Return</div>
+    <svg width="100%" viewBox="0 0 700 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="60" y1="20" x2="60" y2="150" stroke="#0F0F0F" stroke-width="1.5"/>
+      <line x1="60" y1="150" x2="680" y2="150" stroke="#0F0F0F" stroke-width="1.5"/>
+      <text x="15" y="90" font-family="-apple-system,sans-serif" font-size="9" fill="#64748B" transform="rotate(-90,15,90)" text-anchor="middle">CAPABILITY LEVEL</text>
+      <text x="370" y="170" font-family="-apple-system,sans-serif" font-size="9" fill="#64748B" text-anchor="middle">MONTHS</text>
+      <line x1="60" y1="120" x2="200" y2="120" stroke="#64748B" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <text x="130" y="113" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">Current State</text>
+      <path d="M200,120 Q280,115 340,100 Q420,80 500,55 Q580,35 680,30" stroke="#2563EB" stroke-width="2" fill="none"/>
+      <line x1="200" y1="145" x2="200" y2="155" stroke="#0F0F0F" stroke-width="1"/>
+      <line x1="330" y1="145" x2="330" y2="155" stroke="#0F0F0F" stroke-width="1"/>
+      <line x1="450" y1="145" x2="450" y2="155" stroke="#0F0F0F" stroke-width="1"/>
+      <line x1="560" y1="145" x2="560" y2="155" stroke="#0F0F0F" stroke-width="1"/>
+      <line x1="640" y1="145" x2="640" y2="155" stroke="#0F0F0F" stroke-width="1"/>
+      <text x="200" y="165" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">M03</text>
+      <text x="330" y="165" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">M08</text>
+      <text x="450" y="165" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">M14</text>
+      <text x="560" y="165" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">M20</text>
+      <text x="640" y="165" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">M24</text>
+      <circle cx="420" cy="78" r="4" fill="#2563EB"/>
+      <text x="340" y="74" font-family="-apple-system,sans-serif" font-size="7" fill="#2563EB">Inflection: PDOS active</text>
+    </svg>
+  </div>
+  <div class="insight-box warn">
+    <div class="ib-label">Critical Constraint</div>
+    <p>57% of procurement functions report siloed operations as a constraint. No transformation roadmap succeeds without executive sponsorship that grants procurement the cross-functional mandate required to operate as a system orchestrator rather than a functional silo.</p>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>The 24-month roadmap is not a timeline for training completion. It is a timeline for operating model transformation. The difference is architectural: one changes what people know; the other changes how the function works.</p>
+  </div>
+  <div class="page-num">13</div>
+</div>
+<!-- PAGE 14 — CAPABILITY GAP ECONOMIC MODEL -->
+<div class="page" id="pg-economic">
+  <div class="page-id">RP001 · CAPABILITY GAP ECONOMIC MODEL</div>
+  <div class="section-rule"><span class="sr-num">12</span><div class="sr-line"></div><span class="sr-tag">Capability Gap Economic Model</span></div>
+  <h2>The Economic Cost of the Capability Gap</h2>
+  <div class="two-col">
+    <div>
+      <p>The procurement capability gap is not an HR concern. It is a financial exposure. When procurement professionals lack the capability to operate as system orchestrators, the costs manifest across four distinct value dimensions: <strong>direct value leakage</strong>, <strong>risk materialisation</strong>, <strong>opportunity cost</strong>, and <strong>transformation delay cost</strong>.</p>
+      <h3>Direct Value Leakage</h3>
+      <p>Procurement functions operating at Stage 01&#8211;02 capability levels consistently underperform against Stage 03&#8211;04 benchmarks across all value dimensions. Industry benchmarking data (representative sources: Hackett Group, McKinsey) indicates that top-quartile procurement functions, characterised by advanced analytics, supplier collaboration, and strategic capability, generate 2&#8211;4x the value of bottom-quartile functions on equivalent spend bases.</p>
+      <div class="insight-box warn">
+        <div class="ib-label">Interpretation</div>
+        <p>For a $1B spend organisation, the difference between median and top-quartile procurement performance represents value leakage in the range of $10M&#8211;$40M annually. The capability gap is the primary driver of this performance differential.</p>
+      </div>
+      <h3>Risk Materialisation Cost</h3>
+      <p>Supply chain disruptions have demonstrated that procurement functions without embedded risk architecture, a defining PSO capability, are structurally exposed. The cost of supply chain disruption events has increased significantly. Procurement functions with advanced risk monitoring systems demonstrate materially faster recovery times and lower disruption costs.</p>
+      <h3>Opportunity Cost</h3>
+      <p>74% of procurement leaders cite alternative sourcing as a priority. 64% cite supply chain visibility. 61% cite supplier collaboration. These priorities represent value creation opportunities that require PSO-level capability to capture. Organisations without PSO capability are systematically unable to access these value pools.</p>
+    </div>
+    <div>
+      <div class="visual-frame">
+        <div class="vf-title">Visual 11: Value Leakage by Capability Stage</div>
+        <svg width="100%" viewBox="0 0 360 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="60" y1="20" x2="60" y2="220" stroke="#0F0F0F" stroke-width="1.5"/>
+          <line x1="60" y1="220" x2="340" y2="220" stroke="#0F0F0F" stroke-width="1.5"/>
+          <text x="15" y="125" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" transform="rotate(-90,15,125)" text-anchor="middle">VALUE CAPTURED (%)</text>
+          <rect x="80" y="180" width="40" height="40" fill="#64748B" opacity="0.4" stroke="#64748B" stroke-width="1"/>
+          <text x="100" y="175" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">25%</text>
+          <text x="100" y="238" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">Stage 01</text>
+          <rect x="140" y="150" width="40" height="70" fill="#64748B" opacity="0.6" stroke="#64748B" stroke-width="1"/>
+          <text x="160" y="145" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">45%</text>
+          <text x="160" y="238" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">Stage 02</text>
+          <rect x="200" y="110" width="40" height="110" fill="#0EA5A4" opacity="0.7" stroke="#0EA5A4" stroke-width="1"/>
+          <text x="220" y="105" font-family="-apple-system,sans-serif" font-size="8" fill="#0EA5A4" text-anchor="middle">65%</text>
+          <text x="220" y="238" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">Stage 03</text>
+          <rect x="260" y="40" width="40" height="180" fill="#2563EB" stroke="#2563EB" stroke-width="1"/>
+          <text x="280" y="35" font-family="-apple-system,sans-serif" font-size="8" fill="#2563EB" text-anchor="middle" font-weight="700">90%+</text>
+          <text x="280" y="238" font-family="-apple-system,sans-serif" font-size="7" fill="#2563EB" text-anchor="middle" font-weight="700">Stage 04</text>
+          <text x="55" y="223" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="end">0</text>
+          <text x="55" y="170" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="end">25</text>
+          <text x="55" y="120" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="end">50</text>
+          <text x="55" y="70" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="end">75</text>
+          <text x="55" y="40" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="end">100</text>
+          <text x="200" y="265" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">Illustrative: based on industry benchmark patterns</text>
+        </svg>
+      </div>
+      <div class="data-table-wrap">
+      <div class="tbl-wrap"><table class="data-table" style="margin-top:1rem;">
+        <thead><tr><th>Cost Category</th><th>Driver</th><th>Magnitude Signal</th></tr></thead>
+        <tbody>
+          <tr><td>Direct value leakage</td><td>Capability stage differential</td><td>2&#8211;4x performance gap</td></tr>
+          <tr><td>Risk materialisation</td><td>Absent risk architecture</td><td>Disruption exposure</td></tr>
+          <tr><td>Opportunity cost</td><td>Inability to capture priority value pools</td><td>74% / 64% / 61% priorities unmet</td></tr>
+          <tr><td>Transformation delay</td><td>14% future readiness</td><td>Compounding annually</td></tr>
+        </tbody>
+      </table></div>
+      </div>
+    </div>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>The capability gap has a cost. It is not visible on a P&amp;L, but it accumulates in every sourcing decision that could have been better, every risk that was not anticipated, and every value pool that was identified but not captured.</p>
+  </div>
+  <div class="page-num">14</div>
+</div>
+<!-- PAGE 15 — FUTURE SCENARIOS -->
+<div class="page" id="pg-scenarios">
+  <div class="page-id">RP001 · FUTURE SCENARIOS</div>
+  <div class="section-rule"><span class="sr-num">13</span><div class="sr-line"></div><span class="sr-tag">Future Scenarios</span></div>
+  <h2>Three Futures: What Happens Next Depends on What Procurement Leaders Do Now</h2>
+  <p>The following scenarios are not predictions. They are structured explorations of plausible futures based on current evidence trajectories. Each scenario represents a coherent outcome given a different set of leadership decisions over the next 24&#8211;36 months.</p>
+  <div class="scenario-grid">
+    <div class="sc-block">
+      <div class="sc-header warn-bg">SCENARIO A · Functional Commoditisation</div>
+      <div class="sc-prob">Probability signal: <strong>High</strong> &#8594; if current trajectory continues</div>
+      <p>Procurement functions that do not invest in PSO capability development will find their transactional activities automated, their strategic activities absorbed by business units with more capable analytics tools, and their function reduced to compliance and contract administration.</p>
+      <p>In this scenario, the CPO role is redefined as a risk and compliance function. Strategic sourcing is managed by business unit leaders with AI-native procurement tools. The procurement function loses its seat at the executive table.</p>
+      <div class="sc-trigger">Trigger conditions: Continued investment in traditional skills · No PDOS development · Technology adoption without capability development</div>
+    </div>
+    <div class="sc-block">
+      <div class="sc-header" style="background:#E2E8F0;color:#0F0F0F;">SCENARIO B · Partial Transformation</div>
+      <div class="sc-prob">Probability signal: <strong>Medium</strong> &#8594; most likely near-term outcome</div>
+      <p>Procurement functions that invest in technology and analytics capability without redesigning their operating model will generate data-rich but decision-poor environments. They will have visibility without insight, tools without judgment, and dashboards without action.</p>
+      <p>In this scenario, procurement maintains its current strategic position but fails to advance it. The function is competent but not differentiated. Value creation is incremental rather than transformational.</p>
+      <div class="sc-trigger">Trigger conditions: Technology investment without operating model redesign · Analytics capability without systems thinking · Individual skill development without architectural change</div>
+    </div>
+    <div class="sc-block">
+      <div class="sc-header" style="background:#2563EB;color:#FFFFFF;">SCENARIO C · Systems Leadership</div>
+      <div class="sc-prob">Probability signal: <strong>Available</strong> &#8594; requires deliberate investment</div>
+      <p>Procurement functions that develop PSO capability, deploy the PDOS, and redesign their operating model around systems thinking will emerge as genuine enterprise value creators. They will manage risk before it materialises, capture value that competitors cannot see, and design supply systems that are simultaneously efficient, resilient, and adaptive.</p>
+      <p>In this scenario, the CPO is a strategic enterprise architect. Procurement is a source of competitive advantage. The function attracts top talent because it offers genuine intellectual challenge and measurable enterprise impact.</p>
+      <div class="sc-trigger">Enabler conditions: VISTA capability development · PDOS deployment · Operating model redesign · Executive mandate · 24-month investment commitment</div>
+    </div>
+  </div>
+  <div class="visual-frame" style="margin-top:2rem;">
+    <div class="vf-title">Visual 12: Scenario Trajectory Map</div>
+    <svg width="100%" viewBox="0 0 730 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="60" y1="80" x2="220" y2="80" stroke="#0F0F0F" stroke-width="2"/>
+      <circle cx="220" cy="80" r="6" fill="#0F0F0F"/>
+      <text x="220" y="100" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle">Decision Point</text>
+      <text x="220" y="112" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">2026&#8211;2027</text>
+      <line x1="220" y1="80" x2="640" y2="140" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <text x="645" y="142" font-family="-apple-system,sans-serif" font-size="8" fill="#DC2626">A: Commoditisation</text>
+      <line x1="220" y1="80" x2="640" y2="80" stroke="#64748B" stroke-width="1.5"/>
+      <text x="645" y="83" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B">B: Partial Transformation</text>
+      <line x1="220" y1="80" x2="640" y2="25" stroke="#2563EB" stroke-width="2"/>
+      <text x="645" y="28" font-family="-apple-system,sans-serif" font-size="8" fill="#2563EB" font-weight="700">C: Systems Leadership</text>
+      <text x="130" y="60" font-family="-apple-system,sans-serif" font-size="8" fill="#64748B" text-anchor="middle">Current State</text>
+      <text x="130" y="72" font-family="-apple-system,sans-serif" font-size="7" fill="#64748B" text-anchor="middle">46% readiness</text>
+    </svg>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>Scenario C is not the default outcome. It is the designed outcome. It requires deliberate investment, executive commitment, and the organisational courage to redesign a function that, on most metrics, is currently performing adequately. Adequate is the enemy of differentiated.</p>
+  </div>
+  <div class="page-num">15</div>
+</div>
+<!-- PAGE 16 — EXECUTIVE RECOMMENDATIONS -->
+<div class="page" id="pg-recs">
+  <div class="page-id">RP001 · EXECUTIVE RECOMMENDATIONS</div>
+  <div class="section-rule"><span class="sr-num">14</span><div class="sr-line"></div><span class="sr-tag">Executive Recommendations</span></div>
+  <h2>Seven Strategic Recommendations for Procurement Transformation</h2>
+  <div class="insight-box">
+    <div class="ib-label">Recommendation</div>
+    <p>The following recommendations are derived from the evidence, frameworks, and analysis presented in this report. They are designed for CPOs and senior procurement leaders who have accepted the premise that their function requires architectural transformation, not incremental improvement.</p>
+  </div>
+  <div class="rec-list" style="margin-top:1.5rem;">
+    <div class="rec-item">
+      <div class="rec-num">01</div>
+      <div class="rec-body">
+        <div class="rec-title">Redefine Procurement's Mandate Before Redesigning Its Capabilities</div>
+        <p>The capability gap cannot be closed until the function's mandate is redefined. CPOs must secure explicit executive agreement that procurement's role is system orchestration, not transaction management. Without mandate clarity, capability investment will be misallocated.</p>
+        <div class="rec-meta"><span class="tag tag-rec">Recommendation</span> &nbsp; Priority: Critical &nbsp;·&nbsp; Timeline: Months 01&#8211;02</div>
+      </div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">02</div>
+      <div class="rec-body">
+        <div class="rec-title">Deploy the VISTA Framework as a Diagnostic Before Investing in Development</div>
+        <p>Assess your current procurement leadership against all five VISTA domains. Identify the weakest domain; this is your system constraint. All development investment should address the constraint first, not the most comfortable or most familiar capability area.</p>
+        <div class="rec-meta"><span class="tag tag-rec">Recommendation</span> &nbsp; Priority: High &nbsp;·&nbsp; Timeline: Months 01&#8211;03</div>
+      </div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">03</div>
+      <div class="rec-body">
+        <div class="rec-title">Design the Procurement Decision Operating System as an Organisational Asset</div>
+        <p>The PDOS is not a software implementation. It is a governance and process architecture. Invest in designing it explicitly: define decision rights, information flows, escalation paths, and feedback mechanisms. A PDOS that exists only in people's heads is fragile; one that is documented and governed is durable.</p>
+        <div class="rec-meta"><span class="tag tag-rec">Recommendation</span> &nbsp; Priority: High &nbsp;·&nbsp; Timeline: Months 04&#8211;08</div>
+      </div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">04</div>
+      <div class="rec-body">
+        <div class="rec-title">Treat Technology Adoption as a Capability Development Programme, Not an IT Project</div>
+        <p>68% of procurement leaders report that technology and data skills are increasing in importance. Technology adoption without capability development produces tool proliferation without value creation. Every technology investment must be accompanied by a structured capability development programme that builds the judgment required to use the technology well.</p>
+        <div class="rec-meta"><span class="tag tag-rec">Recommendation</span> &nbsp; Priority: High &nbsp;·&nbsp; Timeline: Ongoing</div>
+      </div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">05</div>
+      <div class="rec-body">
+        <div class="rec-title">Address Structural Silos Before Investing in Cross-Functional Capability</div>
+        <p>57% of procurement functions report siloed operations as a constraint. Cross-functional capability cannot be developed in a structurally isolated function. CPOs must negotiate with HR, Finance, Operations, and IT leaders for the structural mandate to operate across boundaries. This is a political and organisational challenge, not a training challenge.</p>
+        <div class="rec-meta"><span class="tag tag-rec">Recommendation</span> &nbsp; Priority: High &nbsp;·&nbsp; Timeline: Months 01&#8211;06</div>
+      </div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">06</div>
+      <div class="rec-body">
+        <div class="rec-title">Build a PSO Development Pipeline as a Strategic Talent Investment</div>
+        <p>The 14% future readiness confidence figure indicates that current talent pipelines are not producing the professionals procurement functions will require. CPOs must design PSO development pathways that include systems thinking education, AI tool fluency, decision architecture training, and cross-functional rotation, not merely procurement certification programmes.</p>
+        <div class="rec-meta"><span class="tag tag-rec">Recommendation</span> &nbsp; Priority: Medium &nbsp;·&nbsp; Timeline: Months 06&#8211;18</div>
+      </div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">07</div>
+      <div class="rec-body">
+        <div class="rec-title">Measure System Performance, Not Process Compliance</div>
+        <p>Procurement functions that measure cost savings, on-time delivery, and contract compliance are measuring process outputs, not system performance. PSO-capable functions measure decision quality, risk anticipation rates, value creation velocity, and stakeholder confidence. Changing the measurement system changes what the function optimises for.</p>
+        <div class="rec-meta"><span class="tag tag-rec">Recommendation</span> &nbsp; Priority: Medium &nbsp;·&nbsp; Timeline: Months 09&#8211;14</div>
+      </div>
+    </div>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Executive Takeaway</div>
+    <p>These recommendations are sequenced deliberately. The first three are architectural prerequisites. Without them, recommendations four through seven will generate activity without transformation. Architecture before action.</p>
+  </div>
+  <div class="page-num">16</div>
+</div>
+<!-- PAGE 17 — CONCLUSION -->
+<div class="page" id="pg-conclusion">
+  <div class="page-id">RP001 · CONCLUSION</div>
+  <div class="section-rule"><span class="sr-num">15</span><div class="sr-line"></div><span class="sr-tag">Conclusion</span></div>
+  <h2>The Architecture of the Future Procurement Function</h2>
+  <div class="two-col">
+    <div>
+      <p>This report has argued that procurement is experiencing a structural capability discontinuity, a transition not between skill levels but between operating logics. The evidence is clear: the capabilities that procurement functions are investing in are not the capabilities that the operating environment requires. The gap between current readiness (46%) and future readiness (14%) is not a training problem. It is a definition problem.</p>
+      <p>The Procurement Systems Operator framework offers a response. Not a job title, but an operating architecture. Not a training programme, but a capability model. Not a technology roadmap, but a decision design philosophy.</p>
+      <p>The organisations that will define procurement's next chapter are not those with the largest procurement teams or the most sophisticated sourcing tools. They are the organisations that understand procurement as what it is increasingly becoming: a system that connects suppliers, technology, data, risk, stakeholders, and strategic objectives, and that requires professionals capable of designing, orchestrating, and continuously improving that system.</p>
+      <p>The PSO is that professional. The VISTA Framework defines their capabilities. The PDOS provides their operating architecture. The 24-month roadmap provides their development path.</p>
+      <p>The window for first-mover advantage is open. The evidence suggests it will not remain open indefinitely.</p>
+    </div>
+    <div>
+      <div class="visual-frame">
+        <div class="vf-title">Visual 13: The PSO Value Creation System</div>
+        <svg width="100%" viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="180" cy="150" r="130" fill="none" stroke="#E2E8F0" stroke-width="1.5"/>
+          <circle cx="180" cy="150" r="90" fill="none" stroke="#2563EB" stroke-width="1" stroke-dasharray="4,3"/>
+          <circle cx="180" cy="150" r="45" fill="#2563EB"/>
+          <text x="180" y="146" font-family="-apple-system,sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">PSO</text>
+          <text x="180" y="160" font-family="-apple-system,sans-serif" font-size="8" fill="#FFFFFF" text-anchor="middle">VISTA+PDOS</text>
+          <text x="180" y="22" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">ENTERPRISE VALUE</text>
+          <text x="290" y="90" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">RESILIENCE</text>
+          <text x="290" y="220" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">INNOVATION</text>
+          <text x="180" y="282" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">EFFICIENCY</text>
+          <text x="70" y="220" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">TRUST</text>
+          <text x="70" y="90" font-family="-apple-system,sans-serif" font-size="8" fill="#0F0F0F" text-anchor="middle" font-weight="700">INTELLIGENCE</text>
+          <line x1="180" y1="105" x2="180" y2="30" stroke="#2563EB" stroke-width="1" stroke-dasharray="3,2"/>
+          <line x1="220" y1="120" x2="275" y2="85" stroke="#2563EB" stroke-width="1" stroke-dasharray="3,2"/>
+          <line x1="220" y1="180" x2="275" y2="215" stroke="#2563EB" stroke-width="1" stroke-dasharray="3,2"/>
+          <line x1="180" y1="195" x2="180" y2="268" stroke="#2563EB" stroke-width="1" stroke-dasharray="3,2"/>
+          <line x1="140" y1="180" x2="85" y2="215" stroke="#2563EB" stroke-width="1" stroke-dasharray="3,2"/>
+          <line x1="140" y1="120" x2="85" y2="85" stroke="#2563EB" stroke-width="1" stroke-dasharray="3,2"/>
+        </svg>
+      </div>
+      <div class="insight-box hl" style="margin-top:1rem;">
+        <div class="ib-label">Final Note</div>
+        <p>The PSO is not a response to disruption. It is a design for it. The function that designs for disruption does not merely survive it; it extracts value from it.</p>
+      </div>
+    </div>
+  </div>
+  <div class="exec-takeaway">
+    <div class="et-label">Closing Insight</div>
+    <p>Procurement's future does not belong to the best buyers. It belongs to the best system designers. The organisations that understand this earliest will define the competitive landscape for the decade ahead.</p>
+  </div>
+  <div class="page-num">17</div>
+</div>
+<!-- PAGE 18 — REFERENCES -->
+<div class="page" id="pg-refs">
+  <div class="page-id">RP001 · REFERENCES</div>
+  <div class="section-rule"><span class="sr-num">16</span><div class="sr-line"></div><span class="sr-tag">References</span></div>
+  <h2>Reference Sources</h2>
+  <div class="insight-box warn">
+    <div class="ib-label">Citation Note</div>
+    <p>This publication is an independent research synthesis. Where exact citations are unavailable, this report indicates &#8220;Representative industry sources for validation.&#8221; No statistics have been fabricated. All quantitative evidence is drawn from publicly available industry research. The source categories below represent the research landscape from which this synthesis draws.</p>
+  </div>
+  <div class="two-col" style="margin-top:1.5rem;">
+    <div>
+      <h3>Primary Source Categories</h3>
+      <div class="data-table-wrap">
+      <div class="tbl-wrap"><table class="data-table">
+        <thead><tr><th>Organisation</th><th>Relevant Research Areas</th><th>Citation Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Gartner</strong></td><td>Procurement technology adoption, talent readiness benchmarks, CPO survey data, digital transformation in procurement</td><td>Representative sources for validation</td></tr>
+          <tr><td><strong>Deloitte</strong></td><td>CPO Survey (annual), procurement operating model research, digital procurement maturity, talent strategy</td><td>Representative sources for validation</td></tr>
+          <tr><td><strong>McKinsey &amp; Company / MGI</strong></td><td>Future of work in procurement, automation impact on procurement roles, supply chain resilience, digital transformation economics</td><td>Representative sources for validation</td></tr>
+          <tr><td><strong>The Hackett Group</strong></td><td>Procurement performance benchmarks, operating model data, best-in-class procurement characteristics, cost and value benchmarks</td><td>Representative sources for validation</td></tr>
+          <tr><td><strong>CIPS</strong></td><td>Professional competency frameworks, procurement workforce surveys, skills development research</td><td>Representative sources for validation</td></tr>
+          <tr><td><strong>ISM (Institute for Supply Management)</strong></td><td>Supply management competency models, workforce development, technology adoption surveys</td><td>Representative sources for validation</td></tr>
+          <tr><td><strong>World Economic Forum</strong></td><td>Future of Jobs Report, supply chain resilience, skills of the future, technology and work</td><td>Representative sources for validation</td></tr>
+        </tbody>
+      </table></div>
+      </div>
+    </div>
+    <div>
+      <h3>Secondary Source Categories</h3>
+      <div class="data-table-wrap">
+      <div class="tbl-wrap"><table class="data-table">
+        <thead><tr><th>Organisation</th><th>Relevant Research Areas</th><th>Citation Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Kearney</strong></td><td>Procurement transformation, alternative sourcing strategies, operating model design</td><td>Representative sources for validation</td></tr>
+          <tr><td><strong>BCG</strong></td><td>Supply chain transformation, procurement digitisation, supplier collaboration models</td><td>Representative sources for validation</td></tr>
+          <tr><td><strong>Accenture</strong></td><td>Intelligent procurement, AI in procurement, digital operating models</td><td>Representative sources for validation</td></tr>
+          <tr><td><strong>MIT Sloan Management Review</strong></td><td>Systems thinking in organisations, decision architecture, organisational capability development</td><td>Representative sources for validation</td></tr>
+          <tr><td><strong>Harvard Business Review</strong></td><td>Strategic procurement, organisational design, capability development, leadership in transformation</td><td>Representative sources for validation</td></tr>
+          <tr><td><strong>Forrester Research</strong></td><td>Procurement technology market analysis, digital transformation maturity</td><td>Representative sources for validation</td></tr>
+        </tbody>
+      </table></div>
+      </div>
+      <div class="insight-box" style="margin-top:1rem;">
+        <div class="ib-label">Frameworks</div>
+        <p>The VISTA Framework, Procurement Decision Operating System (PDOS), Procurement Systems Operator (PSO) model, and Capability Evolution Model presented in this publication are original intellectual contributions developed for this report. They are not attributed to any external source.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">18</div>
+</div>
+<!-- PAGE 19 — APPENDIX -->
+<div class="page" id="pg-appendix">
+  <div class="page-id">RP001 · APPENDIX</div>
+  <div class="section-rule"><span class="sr-num">17</span><div class="sr-line"></div><span class="sr-tag">Appendix</span></div>
+  <h2>Appendix: Diagnostic Tools and Supporting Analysis</h2>
+  <div class="two-col">
+    <div>
+      <h3>Appendix A: VISTA Self-Assessment Diagnostic</h3>
+      <p>The following diagnostic is designed for procurement leaders to assess their team's current VISTA capability profile. Rate each domain on a scale of 1 (minimal capability) to 5 (fully developed capability).</p>
+      <div class="data-table-wrap">
+      <div class="tbl-wrap"><table class="data-table">
+        <thead><tr><th>Domain</th><th>Assessment Criteria</th><th>Score (1&#8211;5)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>V = Value Architecture</strong></td><td>Can your team articulate procurement value beyond cost savings? Do you have a value measurement framework that captures resilience, innovation, and relationship value?</td><td>____</td></tr>
+          <tr><td><strong>I = Intelligence Synthesis</strong></td><td>Can your team integrate multiple data streams into coherent decision inputs? Do you have structured processes for converting data into insight?</td><td>____</td></tr>
+          <tr><td><strong>S = Systems Navigation</strong></td><td>Can your team operate effectively across technology platforms, organisational structures, and stakeholder networks? Do you understand system interdependencies?</td><td>____</td></tr>
+          <tr><td><strong>T = Trust Engineering</strong></td><td>Does your team have structured approaches to supplier relationship governance and internal stakeholder credibility? Is trust a designed outcome or a hoped-for outcome?</td><td>____</td></tr>
+          <tr><td><strong>A = Adaptive Judgment</strong></td><td>Can your team make high-quality decisions under uncertainty and at pace? Do you have processes for calibrating judgment and learning from decision outcomes?</td><td>____</td></tr>
+        </tbody>
+      </table></div>
+      </div>
+      <div class="insight-box" style="margin-top:1rem;">
+        <div class="ib-label">Scoring Interpretation</div>
+        <p><strong>20&#8211;25:</strong> PSO-ready. Focus on optimisation and scale.<br/>
+        <strong>14&#8211;19:</strong> Partial capability. Identify the weakest domain and address it as a system constraint.<br/>
+        <strong>08&#8211;13:</strong> Capability gap. Architectural intervention required before incremental development.<br/>
+        <strong>Below 08:</strong> Foundational redesign needed. Begin with mandate clarification and operating model diagnosis.</p>
+      </div>
+    </div>
+    <div>
+      <h3>Appendix B: Constraints Analysis Summary</h3>
+      <div class="data-table-wrap">
+      <div class="tbl-wrap"><table class="data-table">
+        <thead><tr><th>Constraint</th><th>Prevalence</th><th>PSO Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td>Siloed operations</td><td>57%</td><td>PDOS cross-functional architecture</td></tr>
+          <tr><td>Competing priorities</td><td>46%</td><td>Value Architecture domain (VISTA-V)</td></tr>
+          <tr><td>Capability limitations</td><td>40%</td><td>VISTA development programme</td></tr>
+          <tr><td>Talent gaps</td><td>34%</td><td>PSO pipeline development</td></tr>
+        </tbody>
+      </table></div>
+      </div>
+      <h3 style="margin-top:1.5rem;">Appendix C: Priority vs. Capability Alignment</h3>
+      <div class="data-table-wrap">
+      <div class="tbl-wrap"><table class="data-table">
+        <thead><tr><th>Strategic Priority</th><th>Prevalence</th><th>Required PSO Capability</th></tr></thead>
+        <tbody>
+          <tr><td>Alternative sourcing</td><td>74%</td><td>Systems Navigation (VISTA-S) + Intelligence Synthesis (VISTA-I)</td></tr>
+          <tr><td>Supply chain visibility</td><td>64%</td><td>Intelligence Synthesis (VISTA-I) + PDOS Layer 1&#8211;2</td></tr>
+          <tr><td>Supplier collaboration</td><td>61%</td><td>Trust Engineering (VISTA-T) + Value Architecture (VISTA-V)</td></tr>
+        </tbody>
+      </table></div>
+      </div>
+      <h3 style="margin-top:1.5rem;">Appendix D: Key Terms</h3>
+      <div class="data-table-wrap">
+      <div class="tbl-wrap"><table class="data-table">
+        <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+        <tbody>
+          <tr><td>PSO</td><td>Procurement Systems Operator. The emerging professional archetype defined in this report</td></tr>
+          <tr><td>VISTA</td><td>Value Architecture · Intelligence Synthesis · Systems Navigation · Trust Engineering · Adaptive Judgment</td></tr>
+          <tr><td>PDOS</td><td>Procurement Decision Operating System. The governance and process architecture through which PSOs operate</td></tr>
+          <tr><td>Capability Discontinuity</td><td>A structural gap between two different capability models, not a gap within an existing model</td></tr>
+          <tr><td>System Optimisation</td><td>Value creation through the design and orchestration of interconnected systems, as distinct from transaction optimisation</td></tr>
+        </tbody>
+      </table></div>
+      </div>
+    </div>
+  </div>
+  <hr class="rule" style="margin-top:2rem;"/>
+  <div style="text-align:center;padding:2rem 0;color:#64748B;font-size:.8rem;">
+    <p>THE RISE OF THE PROCUREMENT SYSTEMS OPERATOR · RP001 · 2026</p>
+    <p>This publication is an independent research synthesis. It does not represent the views of any named organisation.</p>
+    <p>Frameworks presented (VISTA, PDOS, PSO Model) are original intellectual contributions.</p>
+    <p>All statistics drawn from publicly available industry sources. Representative industry sources cited for validation.</p>
+  </div>
+  <div class="page-num">19</div>
+</div>
+<div class="page" id="pg-author">
+  <div class="page-id">RP001 · ABOUT THE AUTHOR</div>
+  <div class="section-rule"><span class="sr-num">—</span><div class="sr-line"></div><span class="sr-tag">About the Author</span></div>
+  <h2>About the Author</h2>
+    <div>
+      <p style="font-size:1.15rem;font-weight:800;margin-bottom:.2rem;color:var(--primary);letter-spacing:-.01em;">Manivardhan Reddy B</p>
+      <p style="font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;">Strategic Sourcing Category Lead (Americas)</p>
+
+      <p style="font-size:.85rem;line-height:1.7;margin-bottom:.85rem;">Manivardhan Reddy B is a Strategic Sourcing Category Lead working in EPC and industrial operations, focused on capital projects and sourcing strategy. His background in construction and environmental infrastructure provides a technical foundation that informs his systems-driven approach to procurement.</p>
+
+      <p style="font-size:.85rem;line-height:1.7;margin-bottom:.85rem;">As a practitioner and independent researcher, he studies how procurement is shifting from transaction optimisation to system optimisation. His work focuses on capability evolution, decision architecture, and the emerging role of the Procurement Systems Operator.</p>
+
+      <p style="font-size:.85rem;line-height:1.7;margin-bottom:1.25rem;"><strong>RP001</strong> is his flagship independent research synthesis on this transition — examining how AI-driven system automation is restructuring the procurement function, what new roles emerge, what capabilities become obsolete, and what organisational designs are required to capture full value.</p>
+
+      <!-- Professional details strip -->
+      <div class="author-detail-strip" style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.25rem;">
+        <div style="padding:.65rem .85rem;border:1px solid var(--rule);border-left:3px solid var(--accent);">
+          <div style="font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--secondary);margin-bottom:.3rem;">Location</div>
+          <p style="font-size:.78rem;font-weight:600;">Greater Houston, Texas<br>United States</p>
+        </div>
+        <div style="padding:.65rem .85rem;border:1px solid var(--rule);border-left:3px solid var(--accent);">
+          <div style="font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--secondary);margin-bottom:.3rem;">Industry</div>
+          <p style="font-size:.78rem;font-weight:600;">Global Chemical &amp;<br>Industrial Manufacturing</p>
+        </div>
+        <div style="padding:.65rem .85rem;border:1px solid var(--rule);border-left:3px solid var(--accent);">
+          <div style="font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--secondary);margin-bottom:.3rem;">Contact</div>
+          <p style="font-size:.78rem;font-weight:600;word-break:break-all;"><a href="https://www.linkedin.com/in/manivardhanreddyb/" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline;">linkedin.com/in/<br>manivardhanreddyb</a></p>
+        </div>
+      </div>
+
+      <!-- Research focus -->
+      <div style="padding:.85rem 1.1rem;border-left:3px solid var(--accent);background:var(--faint);">
+        <p style="font-family:var(--mono);font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;color:var(--secondary);margin-bottom:.4rem;">Research Focus Areas</p>
+        <p style="font-size:.8rem;line-height:1.65;">Procurement system architecture · AI-augmented sourcing · Capability model design · Decision architecture · Organisational transformation · Systems thinking in commercial functions</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin-top:2.5rem;"/>
+
+  <!-- Footer three-col -->
+  <div class="author-footer-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-top:1.5rem;">
+    <div style="padding:1rem;border:1px solid var(--rule);">
+      <div style="font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--secondary);margin-bottom:.5rem;">Methodology</div>
+      <p style="font-size:.78rem;line-height:1.6;">This report draws on structured literature review, practitioner observation, and original framework development. All statistics are drawn from publicly available industry sources and cited for validation purposes.</p>
+    </div>
+    <div style="padding:1rem;border:1px solid var(--rule);">
+      <div style="font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--secondary);margin-bottom:.5rem;">Independence</div>
+      <p style="font-size:.78rem;line-height:1.6;">This publication is entirely independent. It does not represent the views, positions, or endorsements of any named organisation, vendor, or employer. No commercial relationships influenced the research findings.</p>
+    </div>
+    <div style="padding:1rem;border:1px solid var(--rule);">
+      <div style="font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--secondary);margin-bottom:.5rem;">Citation</div>
+      <p style="font-size:.78rem;line-height:1.6;">If referencing this work, please cite as: <em>The Rise of the Procurement Systems Operator</em>, RP001, 2026. Frameworks (VISTA, PDOS, PSO Model) are original intellectual contributions and should be attributed accordingly.</p>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin-top:2rem;"/>
+  <div style="text-align:center;padding:2rem 0;color:#64748B;font-size:.8rem;">
+    <p>THE RISE OF THE PROCUREMENT SYSTEMS OPERATOR · RP001 · 2026</p>
+    <p style="margin-top:.4rem;">This publication is an independent research synthesis. It does not represent the views of any named organisation.</p>
+  </div>
+  <div class="page-num">20</div>
+</div>
+<!-- ============================================================
+     SCROLL TO TOP BUTTON
+     ============================================================ -->
+<button id="scroll-top-btn" aria-label="Scroll to top" title="Back to top">&#8679;</button>
+
+<script>
+(function(){
+  // Scroll-to-top visibility
+  var btn = document.getElementById('scroll-top-btn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 400){ btn.classList.add('visible'); }
+    else { btn.classList.remove('visible'); }
+  }, {passive:true});
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // Active nav highlight on scroll
+  var navLinks = document.querySelectorAll('#report-nav-inner a[href^="#"]');
+  var sections = [];
+  navLinks.forEach(function(a){
+    var id = a.getAttribute('href').replace('#','');
+    var el = document.getElementById(id);
+    if(el) sections.push({id:id, el:el, a:a});
+  });
+  function onScroll(){
+    var scrollY = window.scrollY + 80;
+    var current = sections[0];
+    for(var i=0;i<sections.length;i++){
+      if(sections[i].el.offsetTop <= scrollY){ current = sections[i]; }
+    }
+    navLinks.forEach(function(a){ a.classList.remove('nav-active'); });
+    if(current){ current.a.classList.add('nav-active'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
