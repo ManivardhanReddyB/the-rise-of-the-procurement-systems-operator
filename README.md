@@ -18,6 +18,17 @@ Read the complete publication:
 
 [Launch Report](https://your-link-goes-here)
 
+## Repository Structure
+
+```text
+the-rise-of-the-procurement-systems-operator/
+
+├── README.md
+├── index.html
+├── assets/
+│   └── rp001-cover.png
+```
+
 ## Core Thesis
 
 Procurement environments are becoming increasingly complex. Teams now operate across larger information flows, multiple stakeholders, expanding operational requirements, and growing AI integration.
