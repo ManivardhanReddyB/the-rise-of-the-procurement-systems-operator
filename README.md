@@ -20,6 +20,8 @@ Read the complete publication:
 
 [Launch Report](https://your-link-goes-here)
 
+---
+
 ## Repository Structure
 
 ```text
