@@ -23,10 +23,10 @@ Read the complete publication:
 ```text
 the-rise-of-the-procurement-systems-operator/
 
-├── README.md
-├── index.html
 ├── assets/
 │   └── rp001-cover.png
+├── README.md
+├── index.html
 ```
 
 ## Core Thesis
