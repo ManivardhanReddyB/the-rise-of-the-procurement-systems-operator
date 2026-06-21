@@ -10,6 +10,14 @@
 
 An independent research publication exploring how procurement is evolving from transaction management toward system orchestration in an AI-enabled operating environment.
 
+## Read the Report
+
+Read the complete publication:
+
+**RP001 | The Rise of the Procurement Systems Operator**
+
+[Launch Report](https://your-link-goes-here)
+
 ## Core Thesis
 
 Procurement environments are becoming increasingly complex. Teams now operate across larger information flows, multiple stakeholders, expanding operational requirements, and growing AI integration.
