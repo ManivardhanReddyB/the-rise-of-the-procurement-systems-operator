@@ -10,6 +10,8 @@
 
 An independent research publication exploring how procurement is evolving from transaction management toward system orchestration in an AI-enabled operating environment.
 
+---
+
 ## Read the Report
 
 Read the complete publication:
@@ -28,6 +30,8 @@ the-rise-of-the-procurement-systems-operator/
 ├── README.md
 ├── index.html
 ```
+
+---
 
 ## Research Series
 
