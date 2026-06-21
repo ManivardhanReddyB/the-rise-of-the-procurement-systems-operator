@@ -91,9 +91,7 @@ Research interests:
 - Enterprise decision systems
 - Organisational transformation
 
-LinkedIn:
-
-:contentReference[oaicite:0]{index=0}
+LinkedIn: [Manivardhan Reddy B](https://www.linkedin.com/in/manivardhanreddyb/)
 
 ---
 
