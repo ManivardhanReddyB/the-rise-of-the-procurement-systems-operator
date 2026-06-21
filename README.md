@@ -2,33 +2,80 @@
 
 An independent research publication exploring how procurement is evolving from transaction management toward system orchestration in an AI-enabled operating environment.
 
-## Overview
+## Core Thesis
 
-This report introduces three original frameworks:
+Procurement is increasingly operating in environments defined by greater complexity, larger information flows, cross-functional dependencies, and growing AI integration.
 
-- PSO (Procurement Systems Operator)
-- VISTA Capability Framework
-- PDOS (Procurement Decision Operating System)
+Traditional procurement roles were largely designed around transaction execution and process management.
 
-The research examines:
+This research proposes that procurement is evolving toward a new operating model where competitive advantage increasingly comes from designing systems behind decisions rather than optimizing isolated activities.
 
-- Procurement capability evolution
-- AI and automation impacts on procurement roles
-- Systems thinking in sourcing and supply chain management
-- Decision architecture in procurement
-- Future procurement operating models
-- Talent and capability transformation
+The emerging role explored in this publication is:
+
+**Procurement Systems Operator (PSO)**
+
+A role focused on orchestrating workflows, intelligence, decision systems, and operational structures across procurement environments.
+
+> The transaction gets attention.  
+> The system creates outcomes.
+
+---
+
+## Research Questions
+
+This publication explores several questions:
+
+- How is procurement changing in AI-enabled environments?
+- What capability gaps are emerging?
+- Which skills become more important?
+- How does systems thinking reshape sourcing and procurement?
+- What operating models may emerge over the next several years?
+- How should procurement leaders prepare?
+
+---
+
+## Original Frameworks Introduced
+
+This publication introduces three original frameworks:
+
+### PSO — Procurement Systems Operator
+
+A proposed operating role focused on moving procurement from execution toward system orchestration.
+
+### VISTA Capability Framework
+
+A capability model designed to identify future procurement skills and transformation requirements.
+
+### PDOS — Procurement Decision Operating System
+
+A decision architecture framework designed to connect inputs, intelligence, governance, and outcomes.
+
+---
 
 ## Report Highlights
 
-- Analysis of the emerging procurement capability gap
+- Procurement capability evolution analysis
 - Four-stage capability evolution model
 - VISTA capability framework
 - Procurement Decision Operating System (PDOS)
 - 24-month transformation roadmap
 - Economic impact model for capability gaps
 - Future procurement scenarios
-- Executive recommendations for procurement leaders
+- Executive recommendations
+
+---
+
+## Research Themes
+
+- Procurement system architecture
+- Strategic sourcing
+- AI-augmented procurement
+- Decision architecture
+- Organisational transformation
+- Systems thinking
+- Future operating models
+
+---
 
 ## Author
 
@@ -38,21 +85,25 @@ Strategic Sourcing Category Lead (Americas)
 
 Research interests:
 
-- Procurement system architecture
-- AI-augmented sourcing
+- Procurement systems
 - Capability model design
-- Decision architecture
+- AI-enabled sourcing
+- Enterprise decision systems
 - Organisational transformation
-- Systems thinking in commercial functions
 
 LinkedIn:
-https://www.linkedin.com/in/manivardhanreddyb/
+
+:contentReference[oaicite:0]{index=0}
+
+---
 
 ## Citation
 
 If referencing this work, please cite:
 
-> Manivardhan Reddy B. *The Rise of the Procurement Systems Operator (RP001)*. Independent Research Publication, 2026.
+> Manivardhan Reddy B. *The Rise of the Procurement Systems Operator (RP001).* Independent Research Publication, 2026.
+
+---
 
 ## Intellectual Property
 
@@ -64,8 +115,10 @@ The following frameworks presented in this publication are original intellectual
 
 Please provide attribution when referencing these frameworks.
 
+---
+
 ## Disclaimer
 
-This publication is an independent research synthesis. It does not represent the views of any employer, client, vendor, or organisation.
+This publication represents independent research and does not reflect the views of any employer, client, vendor, or organisation.
 
-All statistics referenced are drawn from publicly available industry research and representative industry sources.
+Industry statistics and external information referenced in the report originate from publicly available research and representative industry sources.
