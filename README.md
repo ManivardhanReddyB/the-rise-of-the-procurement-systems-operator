@@ -41,6 +41,20 @@ Planned publications:
 
 □ RP003 | In development
 
+---
+
+## Research Themes
+
+- Procurement systems architecture
+- Strategic sourcing
+- AI-augmented procurement
+- Decision architecture
+- Organisational transformation
+- Systems thinking
+- Future operating models
+
+---
+
 ## Core Thesis
 
 Procurement environments are becoming increasingly complex. Teams now operate across larger information flows, multiple stakeholders, expanding operational requirements, and growing AI integration.
@@ -101,18 +115,6 @@ A decision architecture framework designed to connect inputs, intelligence, gove
 - Economic impact model for capability gaps
 - Future procurement scenarios
 - Executive recommendations for procurement leaders
-
----
-
-## Research Themes
-
-- Procurement systems architecture
-- Strategic sourcing
-- AI-augmented procurement
-- Decision architecture
-- Organisational transformation
-- Systems thinking
-- Future operating models
 
 ---
 
