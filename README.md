@@ -57,7 +57,7 @@ Current Version:
 
 Status: Public
 
-Released: July 2026
+Released: August 2026
 
 Updates:
 
