@@ -18,7 +18,7 @@ Read the complete publication:
 
 **RP001 | The Rise of the Procurement Systems Operator**
 
-[Launch Report](https://github.com/ManivardhanReddyB/the-rise-of-the-procurement-systems-operator.git)
+[Launch Report](https://manivardhanreddyb.github.io/the-rise-of-the-procurement-systems-operator/)
 
 ---
 
